@@ -3,52 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All About Process Mining</title>
+    <title>Bibliography</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <style>
-        body { margin: 0; padding: 0; }
-        header {
+        body { margin: 20px; }
+        .table-row { cursor: pointer; }
+        .search-container { position: relative; margin-bottom: 10px; }
+        .clear-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 1.2em;
+            color: #aaa;
+        }
+        .clear-btn:hover {
+            color: #000;
+        }
+        .details-section {
+            border-left: 1px solid #ddd;
+            padding-left: 20px;
+            position: sticky;
+            top: 20px;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .pagination button {
+            margin: 0 2px;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .pagination button.active {
             background-color: #007bff;
             color: #fff;
-            padding: 10px 20px;
         }
-        header h1 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-        nav {
-            margin-top: 5px;
-        }
-        nav a {
-            color: #fff;
-            margin-right: 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            margin-top: 20px;
+        .pagination button.disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>All About Process Mining</h1>
-        <nav>
-            <a href="#bibliography">Bibliography</a>
-            <a href="#imprint">Imprint</a>
-        </nav>
-    </header>
-
     <div class="container">
         <div class="row">
             <!-- Left Column: List -->
             <div class="col-md-6">
-                <h2 id="bibliography">Bibliography</h2>
+                <h2>Bibliography</h2>
                 <div class="search-container">
                     <input type="text" id="searchInput" class="form-control" placeholder="Search...">
                     <span class="clear-btn" id="clearSearch">&times;</span>
@@ -99,11 +109,14 @@
 
         function sortData(data) {
             return data.sort((a, b) => {
+                // Sort by Year (descending)
                 const yearA = parseInt(a.PublicationYear) || 0;
                 const yearB = parseInt(b.PublicationYear) || 0;
                 if (yearA !== yearB) {
                     return yearB - yearA; // Descending order
                 }
+
+                // If Years are equal, sort by Title (ascending)
                 const titleA = (a.Title || '').toLowerCase();
                 const titleB = (b.Title || '').toLowerCase();
                 return titleA.localeCompare(titleB); // Ascending order
@@ -114,9 +127,11 @@
             const table = $("#bibliographyTable");
             table.empty();
 
+            // Calculate start and end indices for current page
             const start = (currentPage - 1) * rowsPerPage;
             const end = Math.min(start + rowsPerPage, data.length);
 
+            // Render only rows for the current page
             for (let i = start; i < end; i++) {
                 const item = data[i];
                 const row = $(`
@@ -135,12 +150,13 @@
             pagination.empty();
 
             const totalPages = Math.ceil(data.length / rowsPerPage);
-            const visiblePages = 5;
+            const visiblePages = 5; // Number of pages to show at once
             const halfVisible = Math.floor(visiblePages / 2);
 
             const startPage = Math.max(1, currentPage - halfVisible);
             const endPage = Math.min(totalPages, startPage + visiblePages - 1);
 
+            // Previous button
             const prevButton = $(`<button ${currentPage === 1 ? 'class="disabled"' : ''}>Previous</button>`);
             prevButton.on("click", () => {
                 if (currentPage > 1) {
@@ -151,6 +167,7 @@
             });
             pagination.append(prevButton);
 
+            // Page buttons
             for (let i = startPage; i <= endPage; i++) {
                 const pageButton = $(`<button ${i === currentPage ? 'class="active"' : ''}>${i}</button>`);
                 pageButton.on("click", () => {
@@ -161,14 +178,17 @@
                 pagination.append(pageButton);
             }
 
+            // Ellipsis for pages before
             if (startPage > 1) {
                 pagination.prepend($('<button class="disabled">...</button>'));
             }
 
+            // Ellipsis for pages after
             if (endPage < totalPages) {
                 pagination.append($('<button class="disabled">...</button>'));
             }
 
+            // Next button
             const nextButton = $(`<button ${currentPage === totalPages ? 'class="disabled"' : ''}>Next</button>`);
             nextButton.on("click", () => {
                 if (currentPage < totalPages) {
@@ -180,6 +200,7 @@
             pagination.append(nextButton);
         }
 
+        // Search functionality
         $("#searchInput").on("input", function() {
             const query = $(this).val().toLowerCase();
             filteredData = sortData(data.filter(item => 
@@ -196,20 +217,23 @@
                     item.ManualTags,
                     item.AbstractNote,
                     item.Url
-                ].some(val => (val || '').toString().toLowerCase().includes(query))
+                ]
+                .some(val => (val || '').toString().toLowerCase().includes(query))
             ));
-            currentPage = 1;
+            currentPage = 1; // Reset to first page after search
             renderTable(filteredData);
             renderPagination(filteredData);
         });
 
+        // Clear search field
         $("#clearSearch").on("click", function() {
             $("#searchInput").val("").trigger("input");
         });
 
+        // Detail view
         $(document).on("click", ".table-row", function() {
             const index = $(this).data("index");
-            const item = filteredData[index];
+            const item = filteredData[index]; // Use filteredData instead of original data
             renderDetails(item);
         });
 
