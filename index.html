@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliography</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        body { margin: 20px; }
+        .table-row { cursor: pointer; }
+        .search-container { position: relative; margin-bottom: 10px; }
+        .clear-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 1.2em;
+            color: #aaa;
+        }
+        .clear-btn:hover {
+            color: #000;
+        }
+        .details-section {
+            border-left: 1px solid #ddd;
+            padding-left: 20px;
+            position: sticky;
+            top: 20px;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .pagination button {
+            margin: 0 2px;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .pagination button.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .pagination button.disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Left Column: List -->
+            <div class="col-md-6">
+                <h2>Bibliography</h2>
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+                    <span class="clear-btn" id="clearSearch">&times;</span>
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bibliographyTable">
+                        <!-- Dynamic Content -->
+                    </tbody>
+                </table>
+                <div class="pagination" id="pagination">
+                    <!-- Pagination buttons will be added here -->
+                </div>
+            </div>
+
+            <!-- Right Column: Details -->
+            <div class="col-md-6 details-section">
+                <div id="details">
+                    <h3 id="detailTitle">Select an entry to view details</h3>
+                    <div id="detailContent">
+                        <!-- Formatted details will be displayed here -->
+                        <pre id="detailContent">Details will appear here...</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let data = null;       // Original data
+        let filteredData = []; // Filtered data
+        const rowsPerPage = 5; // Number of rows per page
+        let currentPage = 1;
+
+        // Load the data dynamically
+        $.getJSON('library_full_data.json', function(response) {
+            data = response;
+            filteredData = [...data]; // Initially, filteredData is the same as data
+            renderTable(filteredData);
+            renderPagination(filteredData);
+        });
+
+        function renderTable(data) {
+            const table = $("#bibliographyTable");
+            table.empty();
+
+            // Calculate start and end indices for current page
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = Math.min(start + rowsPerPage, data.length);
+
+            // Render only rows for the current page
+            for (let i = start; i < end; i++) {
+                const item = data[i];
+                const row = $(`
+                    <tr class="table-row" data-index="${i}">
+                        <td>${item.PublicationYear || 'N/A'}</td>
+                        <td>${item.Title || 'N/A'}</td>
+                        <td>${item.Author || 'N/A'}</td>
+                    </tr>
+                `);
+                table.append(row);
+            }
+        }
+
+        function renderPagination(data) {
+            const pagination = $("#pagination");
+            pagination.empty();
+
+            const totalPages = Math.ceil(data.length / rowsPerPage);
+            const visiblePages = 5; // Number of pages to show at once
+            const halfVisible = Math.floor(visiblePages / 2);
+
+            const startPage = Math.max(1, currentPage - halfVisible);
+            const endPage = Math.min(totalPages, startPage + visiblePages - 1);
+
+            // Previous button
+            const prevButton = $(`<button ${currentPage === 1 ? 'class="disabled"' : ''}>Previous</button>`);
+            prevButton.on("click", () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderTable(filteredData);
+                    renderPagination(filteredData);
+                }
+            });
+            pagination.append(prevButton);
+
+            // Page buttons
+            for (let i = startPage; i <= endPage; i++) {
+                const pageButton = $(`<button ${i === currentPage ? 'class="active"' : ''}>${i}</button>`);
+                pageButton.on("click", () => {
+                    currentPage = i;
+                    renderTable(filteredData);
+                    renderPagination(filteredData);
+                });
+                pagination.append(pageButton);
+            }
+
+            // Ellipsis for pages before
+            if (startPage > 1) {
+                pagination.prepend($('<button class="disabled">...</button>'));
+            }
+
+            // Ellipsis for pages after
+            if (endPage < totalPages) {
+                pagination.append($('<button class="disabled">...</button>'));
+            }
+
+            // Next button
+            const nextButton = $(`<button ${currentPage === totalPages ? 'class="disabled"' : ''}>Next</button>`);
+            nextButton.on("click", () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderTable(filteredData);
+                    renderPagination(filteredData);
+                }
+            });
+            pagination.append(nextButton);
+        }
+
+        // Search functionality
+        $("#searchInput").on("input", function() {
+            const query = $(this).val().toLowerCase();
+            filteredData = data.filter(item => 
+                [
+                    item.Title,
+                    item.Author,
+                    item.Editor,
+                    item.ItemType,
+                    item.PublicationTitle,
+                    item.Publisher,
+                    item.PublicationYear,
+                    item.Pages,
+                    item.Language,
+                    item.ManualTags,
+                    item.AbstractNote,
+                    item.Url
+                ]
+                .some(val => (val || '').toString().toLowerCase().includes(query))
+            );
+            currentPage = 1; // Reset to first page after search
+            renderTable(filteredData);
+            renderPagination(filteredData);
+        });
+
+        // Clear search field
+        $("#clearSearch").on("click", function() {
+            $("#searchInput").val("").trigger("input");
+        });
+
+        // Detail view
+        $(document).on("click", ".table-row", function() {
+            const index = $(this).data("index");
+            const item = filteredData[index]; // Use filteredData instead of original data
+            renderDetails(item);
+        });
+
+        function renderDetails(item) {
+            const detailContent = $("#detailContent");
+            detailContent.empty();
+
+            const formattedDetails = `
+                <div class="detail-item">
+                    <label><b>Title:</b></label>
+                    <div>${item.Title || 'N/A'}</div>
+                </div>
+                <div class="detail-item">
+                    <label><b>Author(s):</b></label>
+                    <div>${item.Author || 'N/A'}</div>
+                </div>
+                <div class="detail-item">
+                    <label><b>Editor(s):</b></label>
+                    <div>${item.Editor || 'N/A'}</div>
+                </div>
+                <div class="detail-item">
+                    <label><b>Item Type:</b></label>
+                    <div>${item.ItemType || 'N/A'}</div>
+                </div>
+                <div class="detail-item">
+                    <label><b>Publication Title:</b></label>
+                    <div>${item.PublicationTitle || 'N/A'}</div>
+                </div>
+                <div class="detail-item">
+                    <label><b>Publisher / Year / Pages / Language:</b></label>
+                    <div>
+                        ${item.Publisher || '-'} / 
+                        ${item.PublicationYear || '-'} / 
+                        ${item.Pages || '-'} / 
+                        ${item.Language || 'N/A'}
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <label><b>Tags:</b></label>
+                    <div>${item.ManualTags || 'N/A'}</div>
+                </div>
+                <div class="detail-item">
+                    <label><b>Abstract:</b></label>
+                    <div>${item.AbstractNote || 'N/A'}</div>
+                </div>
+                <div class="detail-item">
+                    <label><b>Source:</b></label>
+                    <div>
+                        <a href="${item.Url || '#'}" target="_blank">Download or link to the source</a>
+                    </div>
+                </div>
+            `;
+
+            detailContent.html(formattedDetails);
+        }
+    </script>
+</body>
+</html>
+
