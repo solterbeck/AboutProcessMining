@@ -81,6 +81,10 @@
         </nav>
     </header>
 
+    <div class="pagination" id="pagination" style="margin-top: 20px; display: flex; justify-content: center;">
+        <!-- Pagination buttons will be dynamically rendered here -->
+    </div>   
+
     <div class="container">
         <!-- Search and Filter Bar -->
         <div class="search-container">
@@ -99,11 +103,85 @@
         <div class="accordion" id="bibliographyAccordion">
             <!-- Dynamic content will be rendered here -->
         </div>
+
+        <div id="pagination">
+            <!-- Dynamic Pagination Content -->
+        </div>        
     </div>
 
     <script>
         let data = null;
         let filteredData = [];
+
+        const rowsPerPage = 5; // Number of rows per page
+        let currentPage = 1;
+
+        function renderPagination(data) {
+            const totalPages = Math.ceil(data.length / rowsPerPage);
+            const paginationContainer = $("#pagination");
+            paginationContainer.empty();
+
+            const visiblePages = 5; // Number of page buttons visible at a time
+            const halfVisible = Math.floor(visiblePages / 2);
+            const startPage = Math.max(1, currentPage - halfVisible);
+            const endPage = Math.min(totalPages, startPage + visiblePages - 1);
+
+            // "Previous" button
+            const prevButton = $(`
+                <button class="btn btn-outline-primary ${currentPage === 1 ? 'disabled' : ''}" id="prevPage">Previous</button>
+            `);
+            prevButton.on("click", function () {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updateBibliographyAndPagination();
+                }
+            });
+            paginationContainer.append(prevButton);
+
+            // Page buttons
+            for (let i = startPage; i <= endPage; i++) {
+                const pageButton = $(`
+                    <button class="btn ${i === currentPage ? 'btn-primary' : 'btn-outline-primary'} page-button">${i}</button>
+                `);
+                pageButton.on("click", function () {
+                    currentPage = i;
+                    updateBibliographyAndPagination();
+                });
+                paginationContainer.append(pageButton);
+            }
+
+            // Ellipsis before first page (if needed)
+            if (startPage > 1) {
+                paginationContainer.prepend(`<button class="btn btn-outline-secondary disabled">...</button>`);
+            }
+
+            // Ellipsis after last page (if needed)
+            if (endPage < totalPages) {
+                paginationContainer.append(`<button class="btn btn-outline-secondary disabled">...</button>`);
+            }
+
+            // "Next" button
+            const nextButton = $(`
+                <button class="btn btn-outline-primary ${currentPage === totalPages ? 'disabled' : ''}" id="nextPage">Next</button>
+            `);
+            nextButton.on("click", function () {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    updateBibliographyAndPagination();
+                }
+            });
+            paginationContainer.append(nextButton);
+        }
+
+        // Update the bibliography list and render pagination
+        function updateBibliographyAndPagination() {
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            const paginatedData = filteredData.slice(start, end);
+            renderBibliographyList(paginatedData);
+            renderPagination(filteredData);
+        }
+
 
         // Load the data dynamically
         $.getJSON('library_full_data.json', function(response) {
@@ -161,7 +239,8 @@
         $("#filterAll").on("click", function () {
             activateFilterButton("filterAll");
             filteredData = [...data];
-            renderBibliographyList(filteredData);
+            currentPage = 1; // Reset to the first page
+            updateBibliographyAndPagination();
         });
 
         $("#filter2016").on("click", function () {
@@ -210,6 +289,7 @@
                 .some(val => (val || '').toString().toLowerCase().includes(query))
             );
             renderBibliographyList(filteredData);
+            updateBibliographyAndPagination();
         });
 
         // Clear search field functionality
