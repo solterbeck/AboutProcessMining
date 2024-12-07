@@ -247,18 +247,21 @@
             activateFilterButton("filter2016");
             filteredData = data.filter(item => parseInt(item.PublicationYear) >= 2016);
             renderBibliographyList(filteredData);
+            updateBibliographyAndPagination();
         });
 
         $("#filter2000").on("click", function () {
             activateFilterButton("filter2000");
             filteredData = data.filter(item => parseInt(item.PublicationYear) >= 2000);
             renderBibliographyList(filteredData);
+            updateBibliographyAndPagination();
         });
 
         $("#filterBefore2000").on("click", function () {
             activateFilterButton("filterBefore2000");
             filteredData = data.filter(item => parseInt(item.PublicationYear) < 2000);
             renderBibliographyList(filteredData);
+            updateBibliographyAndPagination();
         });
 
         $("#filterNew").on("click", function () {
@@ -266,6 +269,7 @@
             // Logic for new entries (if defined) goes here
             filteredData = data.filter(item => item.isNew); // Example logic
             renderBibliographyList(filteredData);
+            updateBibliographyAndPagination();
         });
 
         // Search Functionality
