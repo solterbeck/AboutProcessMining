@@ -150,28 +150,43 @@
         }
 
         // Filter Buttons Functionality
+        function activateFilterButton(buttonId) {
+            // Clear the active class from all filter buttons
+            $(".filter-buttons button").removeClass("btn-primary").addClass("btn-outline-primary");
+
+            // Add the active class to the clicked button
+            $(`#${buttonId}`).removeClass("btn-outline-primary").addClass("btn-primary");
+        }
+
         $("#filterAll").on("click", function () {
+            activateFilterButton("filterAll");
             filteredData = [...data];
             renderBibliographyList(filteredData);
         });
 
         $("#filter2016").on("click", function () {
+            activateFilterButton("filter2016");
             filteredData = data.filter(item => parseInt(item.PublicationYear) >= 2016);
             renderBibliographyList(filteredData);
         });
 
         $("#filter2000").on("click", function () {
+            activateFilterButton("filter2000");
             filteredData = data.filter(item => parseInt(item.PublicationYear) >= 2000);
             renderBibliographyList(filteredData);
         });
 
         $("#filterBefore2000").on("click", function () {
+            activateFilterButton("filterBefore2000");
             filteredData = data.filter(item => parseInt(item.PublicationYear) < 2000);
             renderBibliographyList(filteredData);
         });
 
         $("#filterNew").on("click", function () {
+            activateFilterButton("filterNew");
             // Logic for new entries (if defined) goes here
+            filteredData = data.filter(item => item.isNew); // Example logic
+            renderBibliographyList(filteredData);
         });
 
         // Search Functionality
