@@ -102,10 +102,26 @@
         // Load the data dynamically
         $.getJSON('library_full_data.json', function(response) {
             data = response;
-            filteredData = [...data]; // Initially, filteredData is the same as data
+            filteredData = sortData([...data]); // Sort the initial data
             renderTable(filteredData);
             renderPagination(filteredData);
         });
+
+        function sortData(data) {
+            return data.sort((a, b) => {
+                // Sort by Year (descending)
+                const yearA = parseInt(a.PublicationYear) || 0;
+                const yearB = parseInt(b.PublicationYear) || 0;
+                if (yearA !== yearB) {
+                    return yearB - yearA; // Descending order
+                }
+
+                // If Years are equal, sort by Title (ascending)
+                const titleA = (a.Title || '').toLowerCase();
+                const titleB = (b.Title || '').toLowerCase();
+                return titleA.localeCompare(titleB); // Ascending order
+            });
+        }
 
         function renderTable(data) {
             const table = $("#bibliographyTable");
@@ -187,7 +203,7 @@
         // Search functionality
         $("#searchInput").on("input", function() {
             const query = $(this).val().toLowerCase();
-            filteredData = data.filter(item => 
+            filteredData = sortData(data.filter(item => 
                 [
                     item.Title,
                     item.Author,
@@ -203,7 +219,7 @@
                     item.Url
                 ]
                 .some(val => (val || '').toString().toLowerCase().includes(query))
-            );
+            ));
             currentPage = 1; // Reset to first page after search
             renderTable(filteredData);
             renderPagination(filteredData);
