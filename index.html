@@ -33,6 +33,22 @@
         }
         .search-container {
             margin: 20px 0;
+            position: relative;
+        }
+        #searchInput {
+            padding-right: 30px;
+        }
+        .clear-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #aaa;
+        }
+        .clear-btn:hover {
+            color: #000;
         }
         .filter-buttons {
             margin-bottom: 20px;
@@ -60,6 +76,7 @@
         <!-- Search and Filter Bar -->
         <div class="search-container">
             <input type="text" id="searchInput" class="form-control" placeholder="Search in Title, Author, Editor, Tags, and Abstract">
+            <span class="clear-btn" id="clearSearch">&times;</span>
         </div>
         <div class="filter-buttons">
             <button class="btn btn-primary" id="filterAll">All</button>
@@ -166,6 +183,12 @@
                 .some(val => (val || '').toString().toLowerCase().includes(query))
             );
             renderBibliographyList(filteredData);
+        });
+
+        // Clear search field functionality
+        $("#clearSearch").on("click", function () {
+            $("#searchInput").val(""); // Clear the input
+            $("#searchInput").trigger("input"); // Trigger input event to refresh the list
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
