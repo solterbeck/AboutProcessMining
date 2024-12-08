@@ -122,8 +122,7 @@
             <button class="btn btn-primary" id="filterAll">All</button>
             <button class="btn btn-outline-primary" id="filter2024">from 2024</button>
             <button class="btn btn-outline-primary" id="filter2016">from 2016</button>
-            <button class="btn btn-outline-primary" id="filter2000">from 2000</button>
-            <button class="btn btn-outline-primary" id="filterBefore2000">before 2000</button>
+            <button class="btn btn-outline-primary" id="filterBefore2016">before 2016</button>
         </div>
 
         <!-- Bibliography List with Accordion -->
@@ -250,8 +249,7 @@
                 if (year) {
                     if ($("#filter2024").hasClass("btn-primary") && year < 2024) return false;
                     if ($("#filter2016").hasClass("btn-primary") && year < 2016) return false;
-                    if ($("#filter2000").hasClass("btn-primary") && year < 2000) return false;
-                    if ($("#filterBefore2000").hasClass("btn-primary") && year >= 2000) return false;
+                    if ($("#filterBefore2016").hasClass("btn-primary") && year >= 2016) return false;
                 }
                 return true;
             });
@@ -292,8 +290,7 @@
         $("#filterAll").on("click", () => activateFilterButton("filterAll"));
         $("#filter2024").on("click", () => activateFilterButton("filter2024"));
         $("#filter2016").on("click", () => activateFilterButton("filter2016"));
-        $("#filter2000").on("click", () => activateFilterButton("filter2000"));
-        $("#filterBefore2000").on("click", () => activateFilterButton("filterBefore2000"));
+        $("#filterBefore2016").on("click", () => activateFilterButton("filterBefore2016"));
 
         $("#searchInput").on("input", function () {
             searchQuery = $(this).val().toLowerCase();
