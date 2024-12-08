@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Mining Bibliography</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding-bottom: 70px; /* Ensure space for fixed pagination */
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+        }
+        header .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        header .navbar-brand span {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        header .navbar-toggler {
+            border: none;
+        }
+        header .navbar-toggler-icon {
+            color: white;
+        }
+        header .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: bold;
+        }
+        header .navbar-nav .nav-link:hover {
+            text-decoration: underline;
+        }
+        .search-container {
+            margin: 20px 0;
+            position: relative;
+        }
+        #searchInput {
+            padding-right: 30px;
+        }
+        .clear-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #aaa;
+        }
+        .clear-btn:hover {
+            color: #000;
+        }
+        .filter-buttons {
+            margin-bottom: 20px;
+        }
+        .filter-buttons button {
+            margin-right: 10px;
+        }
+        .accordion-button:not(.collapsed) {
+            color: #007bff;
+            background-color: #e9ecef;
+        }
+        .no-items {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #888;
+        }
+        .fixed-pagination {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Responsive Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <!-- Logo and Brand -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="logo-placeholder.png" alt="Logo">
+                    <span>All About Process Mining</span>
+                </a>
+                <!-- Hamburger Menu -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Collapsible Links -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Bibliography</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="imprint.html">Imprint</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Search and Filter Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search in Title, Author, Editor, Tags, and Abstract">
+            <span class="clear-btn" id="clearSearch">&times;</span>
+        </div>
+        <div class="filter-buttons">
+            <button class="btn btn-primary" id="filterAll">All</button>
+            <button class="btn btn-outline-primary" id="filter2024">from 2024</button>
+            <button class="btn btn-outline-primary" id="filter2016">from 2016</button>
+            <button class="btn btn-outline-primary" id="filterBefore2016">before 2016</button>
+        </div>
+
+        <!-- Bibliography List with Accordion -->
+        <div class="accordion" id="bibliographyAccordion">
+            <!-- Dynamic content will be rendered here -->
+        </div>
+
+        <!-- No Items Message -->
+        <div class="no-items" id="noItemsMessage" style="display: none;">No items found.</div>
+    </div>
+
+    <!-- Fixed Pagination -->
+    <div class="fixed-pagination" id="pagination">
+        <!-- Pagination buttons will be dynamically rendered here -->
+    </div>
+
+    <script>
+        let data = null;
+        let filteredData = [];
+        const rowsPerPage = 5;
+        let currentPage = 1;
+        let searchQuery = "";
+
+        function sortDataByTitle(data) {
+            return data.sort((a, b) => {
+                const titleA = (a.Title || '').toLowerCase();
+                const titleB = (b.Title || '').toLowerCase();
+                return titleA.localeCompare(titleB);
+            });
+        }
+
+        function renderPagination(data) {
+            const totalPages = Math.ceil(data.length / rowsPerPage);
+            const paginationContainer = $("#pagination");
+            paginationContainer.empty();
+
+            const visiblePages = 5;
+            const startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
+            const endPage = Math.min(totalPages, startPage + visiblePages - 1);
+
+            if (currentPage > 1) {
+                paginationContainer.append('<button class="btn btn-outline-primary" id="prevPage">Previous</button>');
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                const activeClass = i === currentPage ? 'btn-primary' : 'btn-outline-primary';
+                paginationContainer.append(`<button class="btn ${activeClass} page-button">${i}</button>`);
+            }
+
+            if (currentPage < totalPages) {
+                paginationContainer.append('<button class="btn btn-outline-primary" id="nextPage">Next</button>');
+            }
+
+            $("#prevPage").on("click", function () {
+                if (currentPage > 1) currentPage--;
+                updateBibliographyAndPagination();
+            });
+
+            $("#nextPage").on("click", function () {
+                if (currentPage < totalPages) currentPage++;
+                updateBibliographyAndPagination();
+            });
+
+            $(".page-button").on("click", function () {
+                currentPage = parseInt($(this).text());
+                updateBibliographyAndPagination();
+            });
+        }
+
+        function updateBibliographyAndPagination() {
+            const start = (currentPage - 1) * rowsPerPage;
+            const paginatedData = filteredData.slice(start, start + rowsPerPage);
+            renderBibliographyList(paginatedData);
+            renderPagination(filteredData);
+        }
+
+        function renderBibliographyList(data) {
+            const accordion = $("#bibliographyAccordion");
+            const noItemsMessage = $("#noItemsMessage");
+
+            accordion.empty();
+            if (data.length === 0) {
+                noItemsMessage.show();
+                return;
+            }
+            noItemsMessage.hide();
+
+            data.forEach((item, index) => {
+                const entry = `
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading${index}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
+                                <div>
+                                    <strong>${item.Title || 'N/A'}</strong><br>
+                                    <small>${item.Author || 'N/A'}</small>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" data-bs-parent="#bibliographyAccordion">
+                            <div class="accordion-body">
+                                <p><strong>Author(s):</strong> ${item.Author || 'N/A'}</p>
+                                <p><strong>Editor(s):</strong> ${item.Editor || 'N/A'}</p>
+                                <p><strong>Item Type:</strong> ${item.ItemType || 'N/A'}</p>
+                                <p><strong>Publication Title:</strong> ${item.PublicationTitle || 'N/A'}</p>
+                                <p><strong>Publisher / Year / Pages / Language:</strong> 
+                                    ${item.Publisher || '-'} / ${item.PublicationYear || '-'} / ${item.Pages || '-'} / ${item.Language || 'N/A'}
+                                </p>
+                                <p><strong>Tags:</strong> ${item.ManualTags || 'N/A'}</p>
+                                <p><strong>Abstract:</strong> ${item.AbstractNote || 'N/A'}</p>
+                                <p><strong>Source:</strong> 
+                                    <a href="${item.Url || '#'}" target="_blank">Download or link to the source</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                accordion.append(entry);
+            });
+        }
+
+        function applyFilterAndSearch() {
+            const filtered = data.filter(item => {
+                const year = parseInt(item.PublicationYear);
+                if (year) {
+                    if ($("#filter2024").hasClass("btn-primary") && year < 2024) return false;
+                    if ($("#filter2016").hasClass("btn-primary") && year < 2016) return false;
+                    if ($("#filterBefore2016").hasClass("btn-primary") && year >= 2016) return false;
+                }
+                return true;
+            });
+
+            filteredData = filtered.filter(item => 
+                searchQuery === "" || [
+                    item.Title,
+                    item.Author,
+                    item.Editor,
+                    item.ItemType,
+                    item.PublicationTitle,
+                    item.Publisher,
+                    item.PublicationYear,
+                    item.Pages,
+                    item.Language,
+                    item.ManualTags,
+                    item.AbstractNote,
+                    item.Url
+                ].some(val => (val || '').toString().toLowerCase().includes(searchQuery))
+            );
+            currentPage = 1;
+            updateBibliographyAndPagination();
+        }
+
+        function activateFilterButton(buttonId) {
+            $(".filter-buttons button").removeClass("btn-primary").addClass("btn-outline-primary");
+            $(`#${buttonId}`).removeClass("btn-outline-primary").addClass("btn-primary");
+            applyFilterAndSearch();
+        }
+
+        $.getJSON('library_full_data.json', function (response) {
+            data = sortDataByTitle(response);
+            filteredData = [...data];
+            currentPage = 1;
+            applyFilterAndSearch();
+        });
+
+        $("#filterAll").on("click", () => activateFilterButton("filterAll"));
+        $("#filter2024").on("click", () => activateFilterButton("filter2024"));
+        $("#filter2016").on("click", () => activateFilterButton("filter2016"));
+        $("#filterBefore2016").on("click", () => activateFilterButton("filterBefore2016"));
+
+        $("#searchInput").on("input", function () {
+            searchQuery = $(this).val().toLowerCase();
+            applyFilterAndSearch();
+        });
+
+        $("#clearSearch").on("click", function () {
+            $("#searchInput").val("");
+            searchQuery = "";
+            applyFilterAndSearch();
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
