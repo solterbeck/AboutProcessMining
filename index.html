@@ -2,24 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Process Mining Bibliography</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
+            padding-bottom: 70px; /* Ensure space for fixed pagination */
         }
         header {
             background-color: #007bff;
             color: white;
             padding: 15px 20px;
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            height: 40px;
+            margin-right: 15px;
         }
         header h1 {
             margin: 0;
             font-size: 1.5rem;
-        }
-        header nav {
-            margin-top: 10px;
+            flex-grow: 1;
         }
         header nav a {
             color: white;
@@ -59,31 +65,28 @@
             color: #007bff;
             background-color: #e9ecef;
         }
-        .accordion-button div {
-            text-align: left;
-        }
-        .accordion-button strong {
-            font-size: 1rem;
-        }
-        .accordion-button small {
-            font-size: 0.9rem;
-            color: #555;
+        .fixed-pagination {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
         }
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header>
+        <img src="logo-placeholder.png" alt="Logo">
         <h1>All About Process Mining</h1>
         <nav>
             <a href="#bibliography">Bibliography</a>
-            <a href="#imprint">Imprint</a>
+            <a href="imprint.html">Imprint</a>
         </nav>
     </header>
-
-    <div class="pagination" id="pagination" style="margin-top: 20px; display: flex; justify-content: center;">
-        <!-- Pagination buttons will be dynamically rendered here -->
-    </div>   
 
     <div class="container">
         <!-- Search and Filter Bar -->
@@ -96,211 +99,90 @@
             <button class="btn btn-outline-primary" id="filter2016">from 2016</button>
             <button class="btn btn-outline-primary" id="filter2000">from 2000</button>
             <button class="btn btn-outline-primary" id="filterBefore2000">before 2000</button>
-            <button class="btn btn-outline-primary" id="filterNew">New Entries</button>
+            <button class="btn btn-outline-primary" id="filter2024">from 2024</button>
         </div>
 
         <!-- Bibliography List with Accordion -->
         <div class="accordion" id="bibliographyAccordion">
             <!-- Dynamic content will be rendered here -->
         </div>
+    </div>
 
-        <div id="pagination">
-            <!-- Dynamic Pagination Content -->
-        </div>        
+    <!-- Fixed Pagination -->
+    <div class="fixed-pagination" id="pagination">
+        <!-- Pagination buttons will be dynamically rendered here -->
     </div>
 
     <script>
         let data = null;
         let filteredData = [];
-
-        const rowsPerPage = 5; // Number of rows per page
+        const rowsPerPage = 5;
         let currentPage = 1;
+
+        function sortDataByTitle(data) {
+            return data.sort((a, b) => {
+                const titleA = (a.Title || '').toLowerCase();
+                const titleB = (b.Title || '').toLowerCase();
+                return titleA.localeCompare(titleB);
+            });
+        }
 
         function renderPagination(data) {
             const totalPages = Math.ceil(data.length / rowsPerPage);
             const paginationContainer = $("#pagination");
             paginationContainer.empty();
 
-            const visiblePages = 5; // Number of page buttons visible at a time
-            const halfVisible = Math.floor(visiblePages / 2);
-            const startPage = Math.max(1, currentPage - halfVisible);
+            const visiblePages = 5;
+            const startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
             const endPage = Math.min(totalPages, startPage + visiblePages - 1);
 
-            // "Previous" button
-            const prevButton = $(`
-                <button class="btn btn-outline-primary ${currentPage === 1 ? 'disabled' : ''}" id="prevPage">Previous</button>
-            `);
-            prevButton.on("click", function () {
-                if (currentPage > 1) {
-                    currentPage--;
-                    updateBibliographyAndPagination();
-                }
-            });
-            paginationContainer.append(prevButton);
+            if (currentPage > 1) {
+                paginationContainer.append('<button class="btn btn-outline-primary" id="prevPage">Previous</button>');
+            }
 
-            // Page buttons
             for (let i = startPage; i <= endPage; i++) {
-                const pageButton = $(`
-                    <button class="btn ${i === currentPage ? 'btn-primary' : 'btn-outline-primary'} page-button">${i}</button>
-                `);
-                pageButton.on("click", function () {
-                    currentPage = i;
-                    updateBibliographyAndPagination();
-                });
-                paginationContainer.append(pageButton);
+                const activeClass = i === currentPage ? 'btn-primary' : 'btn-outline-primary';
+                paginationContainer.append(`<button class="btn ${activeClass} page-button">${i}</button>`);
             }
 
-            // Ellipsis before first page (if needed)
-            if (startPage > 1) {
-                paginationContainer.prepend(`<button class="btn btn-outline-secondary disabled">...</button>`);
+            if (currentPage < totalPages) {
+                paginationContainer.append('<button class="btn btn-outline-primary" id="nextPage">Next</button>');
             }
 
-            // Ellipsis after last page (if needed)
-            if (endPage < totalPages) {
-                paginationContainer.append(`<button class="btn btn-outline-secondary disabled">...</button>`);
-            }
-
-            // "Next" button
-            const nextButton = $(`
-                <button class="btn btn-outline-primary ${currentPage === totalPages ? 'disabled' : ''}" id="nextPage">Next</button>
-            `);
-            nextButton.on("click", function () {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    updateBibliographyAndPagination();
-                }
+            $("#prevPage").on("click", function () {
+                if (currentPage > 1) currentPage--;
+                updateBibliographyAndPagination();
             });
-            paginationContainer.append(nextButton);
+
+            $("#nextPage").on("click", function () {
+                if (currentPage < totalPages) currentPage++;
+                updateBibliographyAndPagination();
+            });
+
+            $(".page-button").on("click", function () {
+                currentPage = parseInt($(this).text());
+                updateBibliographyAndPagination();
+            });
         }
 
-        // Update the bibliography list and render pagination
         function updateBibliographyAndPagination() {
             const start = (currentPage - 1) * rowsPerPage;
-            const end = start + rowsPerPage;
-            const paginatedData = filteredData.slice(start, end);
+            const paginatedData = filteredData.slice(start, start + rowsPerPage);
             renderBibliographyList(paginatedData);
             renderPagination(filteredData);
         }
 
-
-        // Load the data dynamically
-        $.getJSON('library_full_data.json', function(response) {
-            data = response;
+        $.getJSON('library_full_data.json', function (response) {
+            data = sortDataByTitle(response);
             filteredData = [...data];
-            renderBibliographyList(filteredData);
+            currentPage = 1;
             updateBibliographyAndPagination();
         });
 
-        function renderBibliographyList(data) {
-            const accordion = $("#bibliographyAccordion");
-            accordion.empty();
-
-            data.forEach((item, index) => {
-                const entry = `
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading${index}">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
-                                <div>
-                                    <strong>${item.Title || 'N/A'}</strong><br>
-                                    <small>${item.Author || 'N/A'}</small>
-                                </div>
-                            </button>
-                        </h2>
-                        <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" data-bs-parent="#bibliographyAccordion">
-                            <div class="accordion-body">
-                                <p><strong>Author(s):</strong> ${item.Author || 'N/A'}</p>
-                                <p><strong>Editor(s):</strong> ${item.Editor || 'N/A'}</p>
-                                <p><strong>Item Type:</strong> ${item.ItemType || 'N/A'}</p>
-                                <p><strong>Publication Title:</strong> ${item.PublicationTitle || 'N/A'}</p>
-                                <p><strong>Publisher / Year / Pages / Language:</strong> 
-                                    ${item.Publisher || '-'} / ${item.PublicationYear || '-'} / ${item.Pages || '-'} / ${item.Language || 'N/A'}
-                                </p>
-                                <p><strong>Tags:</strong> ${item.ManualTags || 'N/A'}</p>
-                                <p><strong>Abstract:</strong> ${item.AbstractNote || 'N/A'}</p>
-                                <p><strong>Source:</strong> 
-                                    <a href="${item.Url || '#'}" target="_blank">Download or link to the source</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                accordion.append(entry);
-            });
-        }
-
-        // Filter Buttons Functionality
-        function activateFilterButton(buttonId) {
-            // Clear the active class from all filter buttons
-            $(".filter-buttons button").removeClass("btn-primary").addClass("btn-outline-primary");
-
-            // Add the active class to the clicked button
-            $(`#${buttonId}`).removeClass("btn-outline-primary").addClass("btn-primary");
-        }
-
-        $("#filterAll").on("click", function () {
-            activateFilterButton("filterAll");
-            filteredData = [...data];
-            currentPage = 1; // Reset to the first page
+        $("#filter2024").on("click", function () {
+            filteredData = data.filter(item => parseInt(item.PublicationYear) >= 2024);
+            currentPage = 1;
             updateBibliographyAndPagination();
-        });
-
-        $("#filter2016").on("click", function () {
-            activateFilterButton("filter2016");
-            filteredData = data.filter(item => parseInt(item.PublicationYear) >= 2016);
-            renderBibliographyList(filteredData);
-            updateBibliographyAndPagination();
-        });
-
-        $("#filter2000").on("click", function () {
-            activateFilterButton("filter2000");
-            filteredData = data.filter(item => parseInt(item.PublicationYear) >= 2000);
-            renderBibliographyList(filteredData);
-            updateBibliographyAndPagination();
-        });
-
-        $("#filterBefore2000").on("click", function () {
-            activateFilterButton("filterBefore2000");
-            filteredData = data.filter(item => parseInt(item.PublicationYear) < 2000);
-            renderBibliographyList(filteredData);
-            updateBibliographyAndPagination();
-        });
-
-        $("#filterNew").on("click", function () {
-            activateFilterButton("filterNew");
-            // Logic for new entries (if defined) goes here
-            filteredData = data.filter(item => item.isNew); // Example logic
-            renderBibliographyList(filteredData);
-            updateBibliographyAndPagination();
-        });
-
-        // Search Functionality
-        $("#searchInput").on("input", function () {
-            const query = $(this).val().toLowerCase();
-            filteredData = data.filter(item => 
-                [
-                    item.Title,
-                    item.Author,
-                    item.Editor,
-                    item.ItemType,
-                    item.PublicationTitle,
-                    item.Publisher,
-                    item.PublicationYear,
-                    item.Pages,
-                    item.Language,
-                    item.ManualTags,
-                    item.AbstractNote,
-                    item.Url
-                ]
-                .some(val => (val || '').toString().toLowerCase().includes(query))
-            );
-            renderBibliographyList(filteredData);
-            updateBibliographyAndPagination();
-        });
-
-        // Clear search field functionality
-        $("#clearSearch").on("click", function () {
-            $("#searchInput").val(""); // Clear the input
-            $("#searchInput").trigger("input"); // Trigger input event to refresh the list
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
