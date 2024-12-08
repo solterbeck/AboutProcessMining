@@ -65,6 +65,12 @@
             color: #007bff;
             background-color: #e9ecef;
         }
+        .no-items {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #888;
+        }
         .fixed-pagination {
             position: fixed;
             bottom: 0;
@@ -106,6 +112,9 @@
         <div class="accordion" id="bibliographyAccordion">
             <!-- Dynamic content will be rendered here -->
         </div>
+
+        <!-- No Items Message -->
+        <div class="no-items" id="noItemsMessage" style="display: none;">No items found.</div>
     </div>
 
     <!-- Fixed Pagination -->
@@ -118,6 +127,7 @@
         let filteredData = [];
         const rowsPerPage = 5;
         let currentPage = 1;
+        let searchQuery = "";
 
         function sortDataByTitle(data) {
             return data.sort((a, b) => {
@@ -172,16 +182,16 @@
             renderPagination(filteredData);
         }
 
-        $.getJSON('library_full_data.json', function (response) {
-            data = sortDataByTitle(response);
-            filteredData = [...data];
-            currentPage = 1;
-            updateBibliographyAndPagination();
-        });
-
         function renderBibliographyList(data) {
             const accordion = $("#bibliographyAccordion");
+            const noItemsMessage = $("#noItemsMessage");
+
             accordion.empty();
+            if (data.length === 0) {
+                noItemsMessage.show();
+                return;
+            }
+            noItemsMessage.hide();
 
             data.forEach((item, index) => {
                 const entry = `
@@ -216,40 +226,20 @@
             });
         }
 
-        $("#filterAll").on("click", function () {
-            filteredData = [...data];
-            currentPage = 1;
-            updateBibliographyAndPagination();
-        });
+        function applyFilterAndSearch() {
+            const filtered = data.filter(item => {
+                const year = parseInt(item.PublicationYear);
+                if (year) {
+                    if ($("#filter2024").hasClass("btn-primary") && year < 2024) return false;
+                    if ($("#filter2016").hasClass("btn-primary") && year < 2016) return false;
+                    if ($("#filter2000").hasClass("btn-primary") && year < 2000) return false;
+                    if ($("#filterBefore2000").hasClass("btn-primary") && year >= 2000) return false;
+                }
+                return true;
+            });
 
-        $("#filter2024").on("click", function () {
-            filteredData = data.filter(item => parseInt(item.PublicationYear) >= 2024);
-            currentPage = 1;
-            updateBibliographyAndPagination();
-        });
-
-        $("#filter2016").on("click", function () {
-            filteredData = data.filter(item => parseInt(item.PublicationYear) >= 2016);
-            currentPage = 1;
-            updateBibliographyAndPagination();
-        });
-
-        $("#filter2000").on("click", function () {
-            filteredData = data.filter(item => parseInt(item.PublicationYear) >= 2000);
-            currentPage = 1;
-            updateBibliographyAndPagination();
-        });
-
-        $("#filterBefore2000").on("click", function () {
-            filteredData = data.filter(item => parseInt(item.PublicationYear) < 2000);
-            currentPage = 1;
-            updateBibliographyAndPagination();
-        });
-
-        $("#searchInput").on("input", function () {
-            const query = $(this).val().toLowerCase();
-            filteredData = data.filter(item => 
-                [
+            filteredData = filtered.filter(item => 
+                searchQuery === "" || [
                     item.Title,
                     item.Author,
                     item.Editor,
@@ -262,16 +252,40 @@
                     item.ManualTags,
                     item.AbstractNote,
                     item.Url
-                ]
-                .some(val => (val || '').toString().toLowerCase().includes(query))
+                ].some(val => (val || '').toString().toLowerCase().includes(searchQuery))
             );
             currentPage = 1;
             updateBibliographyAndPagination();
+        }
+
+        function activateFilterButton(buttonId) {
+            $(".filter-buttons button").removeClass("btn-primary").addClass("btn-outline-primary");
+            $(`#${buttonId}`).removeClass("btn-outline-primary").addClass("btn-primary");
+            applyFilterAndSearch();
+        }
+
+        $.getJSON('library_full_data.json', function (response) {
+            data = sortDataByTitle(response);
+            filteredData = [...data];
+            currentPage = 1;
+            applyFilterAndSearch();
+        });
+
+        $("#filterAll").on("click", () => activateFilterButton("filterAll"));
+        $("#filter2024").on("click", () => activateFilterButton("filter2024"));
+        $("#filter2016").on("click", () => activateFilterButton("filter2016"));
+        $("#filter2000").on("click", () => activateFilterButton("filter2000"));
+        $("#filterBefore2000").on("click", () => activateFilterButton("filterBefore2000"));
+
+        $("#searchInput").on("input", function () {
+            searchQuery = $(this).val().toLowerCase();
+            applyFilterAndSearch();
         });
 
         $("#clearSearch").on("click", function () {
             $("#searchInput").val("");
-            $("#searchInput").trigger("input");
+            searchQuery = "";
+            applyFilterAndSearch();
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
