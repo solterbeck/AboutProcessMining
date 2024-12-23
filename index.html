@@ -111,27 +111,27 @@
 
     <script>
         async function loadNewPublications() {
-        const response = await fetch('path/to/library_full_data.json');
-        const publications = await response.json();
+            const response = await fetch('path/to/library_full_data.json');
+            const publications = await response.json();
 
-        // Datum für "neu" definieren (z. B. innerhalb der letzten 30 Tage)
-        const cutoffDate = new Date();
-        cutoffDate.setDate(cutoffDate.getDate() - 30);
+            // Datum für "neu" definieren (z. B. innerhalb der letzten 30 Tage)
+            const cutoffDate = new Date();
+            cutoffDate.setDate(cutoffDate.getDate() - 30);
 
-        // Neue Veröffentlichungen filtern und alphabetisch sortieren
-        const newPublications = publications
-            .filter(pub => {
-            const dateAdded = new Date(pub.DateAdded);
-            return dateAdded >= cutoffDate;
-            })
-            .sort((a, b) => a.Title.localeCompare(b.Title)); // Alphabetisch sortieren nach Titel
+            // Neue Veröffentlichungen filtern und alphabetisch sortieren
+            const newPublications = publications
+                .filter(pub => {
+                const dateAdded = new Date(pub.DateAdded);
+                return dateAdded >= cutoffDate;
+                })
+                .sort((a, b) => a.Title.localeCompare(b.Title)); // Alphabetisch sortieren nach Titel
 
-        const listElement = document.getElementById('new-publications-list');
-        newPublications.forEach(pub => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${pub.Title} von ${pub.Author} (${pub.PublicationYear})`;
-            listElement.appendChild(listItem);
-        });
+            const listElement = document.getElementById('new-publications-list');
+            newPublications.forEach(pub => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${pub.Title} von ${pub.Author} (${pub.PublicationYear})`;
+                listElement.appendChild(listItem);
+            });
         }
       
         // Funktion aufrufen
