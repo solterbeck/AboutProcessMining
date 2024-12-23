@@ -113,6 +113,8 @@
         async function loadNewPublications() {
           const response = await fetch('library_full_data.json');
           const publications = await response.json();
+
+          publications = sortDataByTitle(publications);
       
           // Datum für "neu" definieren (z. B. innerhalb der letzten 30 Tage)
           const cutoffDate = new Date();
@@ -129,6 +131,14 @@
             listItem.textContent = `${pub.Title} by ${pub.Author || 'N/A'}`;
             listElement.appendChild(listItem);
           });
+        }
+
+        function sortDataByTitle(data) {
+            return data.sort((a, b) => {
+                const titleA = (a.Title || '').toLowerCase();
+                const titleB = (b.Title || '').toLowerCase();
+                return titleA.localeCompare(titleB);
+            });
         }
       
         // Funktion aufrufen
