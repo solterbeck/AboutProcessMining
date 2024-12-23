@@ -101,6 +101,39 @@
         </div>
     </div>
 
+    <!-- New Entries -->
+    <div id="new-publications">
+        <h3>Neu hinzugefügte Veröffentlichungen</h3>
+        <ul id="new-publications-list">
+          <!-- Veröffentlichungen werden hier dynamisch hinzugefügt -->
+        </ul>
+    </div>
+
+    <script>
+        async function loadNewPublications() {
+          const response = await fetch('path/to/library_full_data.json');
+          const publications = await response.json();
+      
+          // Datum für "neu" definieren (z. B. innerhalb der letzten 30 Tage)
+          const cutoffDate = new Date();
+          cutoffDate.setDate(cutoffDate.getDate() - 30);
+      
+          const newPublications = publications.filter(pub => {
+            const dateAdded = new Date(pub.DateAdded);
+            return dateAdded >= cutoffDate;
+          });
+      
+          const listElement = document.getElementById('new-publications-list');
+          newPublications.forEach(pub => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${pub.Title} von ${pub.Author} (${pub.PublicationYear})`;
+            listElement.appendChild(listItem);
+          });
+        }
+      
+        // Funktion aufrufen
+        loadNewPublications();
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
