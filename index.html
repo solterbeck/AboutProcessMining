@@ -111,7 +111,7 @@
 
     <script>
         async function loadNewPublications() {
-          const response = await fetch('path/to/library_full_data.json');
+          const response = await fetch('library_full_data.json');
           const publications = await response.json();
       
           // Datum für "neu" definieren (z. B. innerhalb der letzten 30 Tage)
