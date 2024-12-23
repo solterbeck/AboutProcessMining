@@ -126,7 +126,7 @@
           const listElement = document.getElementById('new-publications-list');
           newPublications.forEach(pub => {
             const listItem = document.createElement('li');
-            listItem.textContent = `${pub.Title} by ${pub.Author}`;
+            listItem.textContent = `${pub.Title} by ${pub.Author || 'N/A'}`;
             listElement.appendChild(listItem);
           });
         }
