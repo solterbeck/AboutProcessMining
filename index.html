@@ -111,34 +111,27 @@
 
     <script>
         async function loadNewPublications() {
-          const response = await fetch('library_full_data.json');
-          const publications = await response.json();
+        const response = await fetch('path/to/library_full_data.json');
+        const publications = await response.json();
 
-          publications = sortDataByTitle(publications);
-      
-          // Datum für "neu" definieren (z. B. innerhalb der letzten 30 Tage)
-          const cutoffDate = new Date();
-          cutoffDate.setDate(cutoffDate.getDate() - 30);
-      
-          const newPublications = publications.filter(pub => {
+        // Datum für "neu" definieren (z. B. innerhalb der letzten 30 Tage)
+        const cutoffDate = new Date();
+        cutoffDate.setDate(cutoffDate.getDate() - 30);
+
+        // Neue Veröffentlichungen filtern und alphabetisch sortieren
+        const newPublications = publications
+            .filter(pub => {
             const dateAdded = new Date(pub.DateAdded);
             return dateAdded >= cutoffDate;
-          });
-      
-          const listElement = document.getElementById('new-publications-list');
-          newPublications.forEach(pub => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${pub.Title} by ${pub.Author || 'N/A'}`;
-            listElement.appendChild(listItem);
-          });
-        }
+            })
+            .sort((a, b) => a.Title.localeCompare(b.Title)); // Alphabetisch sortieren nach Titel
 
-        function sortDataByTitle(data) {
-            return data.sort((a, b) => {
-                const titleA = (a.Title || '').toLowerCase();
-                const titleB = (b.Title || '').toLowerCase();
-                return titleA.localeCompare(titleB);
-            });
+        const listElement = document.getElementById('new-publications-list');
+        newPublications.forEach(pub => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${pub.Title} von ${pub.Author} (${pub.PublicationYear})`;
+            listElement.appendChild(listItem);
+        });
         }
       
         // Funktion aufrufen
