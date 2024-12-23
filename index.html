@@ -103,7 +103,7 @@
 
     <!-- New Entries -->
     <div id="new-publications">
-        <h3>Neu hinzugefügte Veröffentlichungen</h3>
+        <h3>Recently added publications</h3>
         <ul id="new-publications-list">
           <!-- Veröffentlichungen werden hier dynamisch hinzugefügt -->
         </ul>
@@ -126,7 +126,7 @@
           const listElement = document.getElementById('new-publications-list');
           newPublications.forEach(pub => {
             const listItem = document.createElement('li');
-            listItem.textContent = `${pub.Title} von ${pub.Author} (${pub.PublicationYear})`;
+            listItem.textContent = `${pub.Title} by ${pub.Author}`;
             listElement.appendChild(listItem);
           });
         }
