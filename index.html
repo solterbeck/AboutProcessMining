@@ -8,6 +8,9 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         .banner {
             position: relative;
@@ -26,6 +29,15 @@
             padding: 20px;
             text-align: center;
             width: 100%;
+        }
+        .accordion-body {
+            overflow-wrap: break-word;
+        }
+        footer {
+            margin-top: auto;
+            padding: 10px 0;
+            background-color: #f8f9fa;
+            text-align: center;
         }
     </style>
 </head>
@@ -54,72 +66,90 @@
         </nav>
     </header>
 
-    <div class="banner">
+    <div class="banner" role="banner" aria-labelledby="banner-title" aria-describedby="banner-description">
         <div class="banner-text">
-            <h1>Mine the relevant Knowledge about Process Mining</h1>
-            <small>Curated by Sven Solterbeck | Picture: (C) Xusernu</small>
+            <h1 id="banner-title">Mine the relevant Knowledge about Process Mining</h1>
+            <small id="banner-description">Curated by Sven Solterbeck | Picture: (C) Xusernu</small>
         </div>
     </div>
 
     <div id="new-publications" class="container my-5">
         <h3>Recently Added Publications</h3>
-        <div class="accordion" id="accordionNewPublications">
-            <!-- Dynamisch hinzugefügte Akkordeon-Einträge -->
+        <div id="noItemsMessage" class="text-center text-muted d-none">
+            <p>No new publications have been added in the last 30 days.</p>
         </div>
+        <div class="accordion" id="accordionNewPublications"></div>
     </div>
 
+    <footer>
+        <p>© Sven Solterbeck, Schwalbach am Taunus, 2024</p>
+    </footer>
+
     <script>
+        // Helper function for fallbacks
+        function getOrFallback(value, fallback = 'N/A') {
+            return value || fallback;
+        }
+
         async function loadNewPublications() {
             try {
                 const response = await fetch('library_full_data.json');
                 if (!response.ok) throw new Error('Failed to fetch data');
                 const publications = await response.json();
 
-                // Datum für "neu" definieren (z. B. innerhalb der letzten 30 Tage)
                 const cutoffDate = new Date();
                 cutoffDate.setDate(cutoffDate.getDate() - 30);
 
-                // Filtern und nach Titel sortieren
+                // Filter and sort publications
                 const newPublications = publications
                     .filter(item => new Date(item.DateAdded) >= cutoffDate)
                     .sort((a, b) => a.Title.localeCompare(b.Title));
 
                 const accordion = document.getElementById('accordionNewPublications');
+                const noItemsMessage = document.getElementById('noItemsMessage');
 
+                if (newPublications.length === 0) {
+                    noItemsMessage.classList.remove('d-none');
+                    return;
+                }
+
+                let htmlContent = '';
                 newPublications.forEach((item, index) => {
-                    const accordionItem = document.createElement('div');
-                    accordionItem.className = 'accordion-item';
-
-                    accordionItem.innerHTML = `
-                    <h2 class="accordion-header" id="heading${index}">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
-                            ${item.Title}
-                        </button>
-                    </h2>
-                    <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" data-bs-parent="#accordionNewPublications">
-                        <div class="accordion-body">
-                            <p><strong>Author(s):</strong> ${item.Author || 'N/A'}</p>
-                            <p><strong>Editor(s):</strong> ${item.Editor || 'N/A'}</p>
-                            <p><strong>Item Type:</strong> ${item.ItemType || 'N/A'}</p>
-                            <p><strong>Publication Title:</strong> ${item.PublicationTitle || 'N/A'}</p>
-                            <p><strong>Publisher / Year / Pages / Language:</strong> 
-                                ${item.Publisher || '-'} / ${item.PublicationYear || '-'} / ${item.Pages || '-'} / ${item.Language || 'N/A'}
-                            </p>
-                            <p><strong>Tags:</strong> ${item.ManualTags || 'N/A'}</p>
-                            <p><strong>Abstract:</strong> ${item.AbstractNote || 'N/A'}</p>
-                            <p><strong>Source:</strong> 
-                                <a href="${item.Url || '#'}" target="_blank">Download or link to the source</a>
-                            </p>
+                    htmlContent += `
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading${index}">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
+                                    ${item.Title}
+                                </button>
+                            </h2>
+                            <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" 
+                                 data-bs-parent="#accordionNewPublications">
+                                <div class="accordion-body">
+                                    <p><strong>Author(s):</strong> ${getOrFallback(item.Author)}</p>
+                                    <p><strong>Editor(s):</strong> ${getOrFallback(item.Editor)}</p>
+                                    <p><strong>Item Type:</strong> ${getOrFallback(item.ItemType)}</p>
+                                    <p><strong>Publication Title:</strong> ${getOrFallback(item.PublicationTitle)}</p>
+                                    <p><strong>Publisher / Year / Pages / Language:</strong> 
+                                        ${getOrFallback(item.Publisher)} / ${getOrFallback(item.PublicationYear)} / ${getOrFallback(item.Pages)} / ${getOrFallback(item.Language)}
+                                    </p>
+                                    <p><strong>Tags:</strong> ${getOrFallback(item.ManualTags)}</p>
+                                    <p><strong>Abstract:</strong> ${getOrFallback(item.AbstractNote)}</p>
+                                    <p><strong>Source:</strong> 
+                                        <a href="${getOrFallback(item.Url, '#')}" target="_blank">Download or link to the source</a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                `;
-
-                    accordion.appendChild(accordionItem);
+                    `;
                 });
+
+                accordion.innerHTML = htmlContent;
             } catch (error) {
                 console.error('Error loading publications:', error);
             }
         }
+
         loadNewPublications();
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
