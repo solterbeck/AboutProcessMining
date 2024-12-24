@@ -81,12 +81,12 @@
 
                 // Filtern und nach Titel sortieren
                 const newPublications = publications
-                    .filter(pub => new Date(item.DateAdded) >= cutoffDate)
+                    .filter(item => new Date(item.DateAdded) >= cutoffDate)
                     .sort((a, b) => a.Title.localeCompare(b.Title));
 
                 const accordion = document.getElementById('accordionNewPublications');
 
-                newPublications.forEach((pub, index) => {
+                newPublications.forEach((item, index) => {
                     const accordionItem = document.createElement('div');
                     accordionItem.className = 'accordion-item';
 
