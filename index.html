@@ -98,10 +98,18 @@
                     </h2>
                     <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" data-bs-parent="#accordionNewPublications">
                         <div class="accordion-body">
-                            <strong>Author:</strong> ${pub.Author || 'Unknown'}<br>
-                            <strong>Year:</strong> ${pub.PublicationYear || 'N/A'}<br>
-                            <strong>Abstract:</strong> ${pub.AbstractNote || 'No abstract available'}<br>
-                            <a href="${pub.Url || '#'}" target="_blank">Read More</a>
+                            <p><strong>Author(s):</strong> ${item.Author || 'N/A'}</p>
+                            <p><strong>Editor(s):</strong> ${item.Editor || 'N/A'}</p>
+                            <p><strong>Item Type:</strong> ${item.ItemType || 'N/A'}</p>
+                            <p><strong>Publication Title:</strong> ${item.PublicationTitle || 'N/A'}</p>
+                            <p><strong>Publisher / Year / Pages / Language:</strong> 
+                                ${item.Publisher || '-'} / ${item.PublicationYear || '-'} / ${item.Pages || '-'} / ${item.Language || 'N/A'}
+                            </p>
+                            <p><strong>Tags:</strong> ${item.ManualTags || 'N/A'}</p>
+                            <p><strong>Abstract:</strong> ${item.AbstractNote || 'N/A'}</p>
+                            <p><strong>Source:</strong> 
+                                <a href="${item.Url || '#'}" target="_blank">Download or link to the source</a>
+                            </p>
                         </div>
                     </div>
                 `;
