@@ -10,6 +10,7 @@ body {
 .banner {
     position: relative;
     min-height: 60vh;
+    /*background: linear-gradient(black, gray), url('banner-image.png');*/
     background-image: url('banner-image.png'), linear-gradient(black, gray);
     background-size: 100% auto;
     background-repeat: no-repeat;
