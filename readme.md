@@ -13,7 +13,7 @@
 ## Possible Roadmap
 * Next
   * Cite - Button
-  * Barrierefrei
+  * Barrier-free (to be checked)
 * MVP 2+
   * Aktuelle Forschung und Publikationen
   * Interaktive Lernmaterialien
