@@ -12,7 +12,7 @@ body {
     min-height: 60vh;
     /*background: linear-gradient(black, gray), url('banner-image.png');*/
     background-image: url('banner-image.png'), linear-gradient(black, gray);
-    background-size: cover;
+    background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
@@ -45,14 +45,9 @@ header .navbar-brand span {
 }
 header .navbar-toggler {
     border: none;
-    background-color: transparent; /* Optional: Set transparent background for button */
-    padding: 5px;
 }
 header .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    background-size: 1.5rem 1.5rem; /* Adjust size */
-    background-repeat: no-repeat;
-    background-position: center;
+    color: white;
 }
 header .navbar-nav .nav-link {
     color: white !important;
