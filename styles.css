@@ -1,1 +1,147 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 70px; /* Ensure space for fixed pagination */
+}
 
+/* Banner Styling */
+.banner {
+    position: relative;
+    min-height: 60vh;
+    background-image: url('banner-image.png'), linear-gradient(black, gray);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+.banner-text {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Header Styling */
+header {
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+header .navbar-brand img {
+    height: 40px;
+    margin-right: 10px;
+}
+header .navbar-brand span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+header .navbar-toggler {
+    border: none;
+}
+header .navbar-toggler-icon {
+    color: white;
+}
+header .navbar-nav .nav-link {
+    color: white !important;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+header .navbar-nav .nav-link:hover {
+    color: #ffcc00 !important;
+    text-decoration: underline;
+}
+
+/* Container Styling */
+.search-container {
+    margin: 20px 0;
+    position: relative;
+}
+#searchInput {
+    padding-right: 30px;
+}
+.clear-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #aaa;
+}
+.clear-btn:hover {
+    color: #000;
+}
+.filter-buttons {
+    margin-bottom: 20px;
+}
+.filter-buttons button {
+    margin-right: 10px;
+}
+.accordion-button:not(.collapsed) {
+    color: #007bff;
+    background-color: #e9ecef;
+}
+.no-items {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #888;
+}
+.fixed-pagination {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #343a40;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #555;
+}
+.footer a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer a:hover {
+    color: #fff;
+}
+
+/* Button Styling */
+button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #a4a6a8;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .banner {
+        flex-direction: row;
+    }
+    .navbar-brand span {
+        font-size: 1.4rem;
+    }
+}

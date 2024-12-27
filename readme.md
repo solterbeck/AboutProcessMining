@@ -12,9 +12,8 @@
 
 ## Possible Roadmap
 * Next
-  * index.html: Links Bibliography, About & Imprint - bright letter
-  * index.html & bibliography.html : Sync Look & Feel
   * Cite - Button
+  * Barrierefrei
 * MVP 2+
   * Aktuelle Forschung und Publikationen
   * Interaktive Lernmaterialien

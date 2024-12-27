@@ -3,89 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover comprehensive knowledge and resources about Process Mining">
     <title>Bibliography</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            padding-bottom: 70px; /* Ensure space for fixed pagination */
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-        }
-        header .navbar-brand img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        header .navbar-brand span {
-            font-size: 1rem;
-            font-weight: bold;
-        }
-        header .navbar-toggler {
-            border: none;
-        }
-        header .navbar-toggler-icon {
-            color: white;
-        }
-        header .navbar-nav .nav-link {
-            color: white !important;
-            font-weight: bold;
-        }
-        header .navbar-nav .nav-link:hover {
-            text-decoration: underline;
-        }
-        .search-container {
-            margin: 20px 0;
-            position: relative;
-        }
-        #searchInput {
-            padding-right: 30px;
-        }
-        .clear-btn {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            font-size: 1.2rem;
-            color: #aaa;
-        }
-        .clear-btn:hover {
-            color: #000;
-        }
-        .filter-buttons {
-            margin-bottom: 20px;
-        }
-        .filter-buttons button {
-            margin-right: 10px;
-        }
-        .accordion-button:not(.collapsed) {
-            color: #007bff;
-            background-color: #e9ecef;
-        }
-        .no-items {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 1.2rem;
-            color: #888;
-        }
-        .fixed-pagination {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #f8f9fa;
-            padding: 10px 0;
-            text-align: center;
-            border-top: 1px solid #ddd;
-        }
-    </style>
 </head>
 <body>
     <!-- Responsive Header -->
@@ -94,7 +16,7 @@
             <div class="container-fluid">
                 <!-- Logo and Brand -->
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="logo-placeholder.png" alt="Logo">
+                    <img src="logo-placeholder.png" alt="Logo of the Website 'All About Process Mining'">
                     <span>All About Process Mining</span>
                 </a>
                 <!-- Hamburger Menu -->
@@ -108,7 +30,7 @@
                             <a class="nav-link" href="bibliography.html">Bibliography</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="imprint.html">Imprint</a>
+                            <a class="nav-link" href="imprint.html">About & Imprint</a>
                         </li>
                     </ul>
                 </div>
@@ -116,7 +38,8 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container my-5">
+        <h3>Bibliography</h3>
         <!-- Search and Filter Bar -->
         <div class="search-container">
             <input type="text" id="searchInput" class="form-control" placeholder="Search in Title, Author, Editor, Tags, and Abstract">
@@ -142,7 +65,7 @@
     <div class="fixed-pagination" id="pagination">
         <!-- Pagination buttons will be dynamically rendered here -->
     </div>
-
+    
     <script>
         let data = null;
         let filteredData = [];
@@ -284,7 +207,7 @@
             applyFilterAndSearch();
         }
 
-        $.getJSON('library_full_data.json', function (response) {
+        $.getJSON('https://solterbeck.github.io/AboutProcessMining/library_full_data.json', function (response) {
             data = sortDataByTitle(response);
             filteredData = [...data];
             currentPage = 1;
@@ -307,6 +230,7 @@
             applyFilterAndSearch();
         });
     </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
