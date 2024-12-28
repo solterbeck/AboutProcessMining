@@ -175,7 +175,7 @@
                                 <p><strong>Source:</strong> 
                                     <a href="${item.Url || '#'}" target="_blank">Download or link to the source</a>
                                 </p>
-                                <button class="btn btn-outline-secondary copy-citation-btn" data-citation="${generateCitation(item)}">Copy Citation</button>
+                                
                             </div>
                         </div>
                     </div>
@@ -189,8 +189,8 @@
             const year = item.PublicationYear ? Math.floor(item.PublicationYear) : "n.d.";
             const title = item.Title || "No title available";
             const url = item.Url || "No URL";
-            const conference = item.ConferenceName || "No conference title available";
             const accessedDate = new Date().toLocaleDateString();
+            const conference = item.PublicationTitle || "No conference info";
             const medium = item.Medium || "N/A";
 
             switch (item.ItemType) {
@@ -204,14 +204,12 @@
                     return `${author} (${year}) '${title}', *${journal}*, pp. ${pages}. Available at: ${url} (Accessed: ${accessedDate}).`;
 
                 case 'Conference paper':
-                    const conference = item.PublicationTitle || "No conference info";
                     return `${author} (${year}) '${title}', presented at *${conference}*. Available at: ${url} (Accessed: ${accessedDate}).`;
 
                 case 'Webpage':
                     return `${author} (${year}) '${title}'. Available at: ${url} (Accessed: ${accessedDate}).`;
 
                 case 'Presentation':
-                    //return `${author} (${year}) '${title}' [${medium}]. Available at: ${url} (Accessed: ${accessedDate}).`;
                     return `${author} (${year}) '${title}' [${medium}]. ${conference}. Available at: ${url} (Accessed: ${accessedDate}).`;
 
                 default:
