@@ -175,6 +175,7 @@
                                 <p><strong>Source:</strong> 
                                     <a href="${item.Url || '#'}" target="_blank">Download or link to the source</a>
                                 </p>
+                                <button class="btn btn-outline-secondary copy-citation-btn" data-citation="${generateCitation(item)}">Copy Citation</button>
                             </div>
                         </div>
                     </div>
@@ -182,6 +183,54 @@
                 accordion.innerHTML += entry;
             });
         }
+
+        function generateCitation(item) {
+            const author = item.Author || "N/A";
+            const year = item.PublicationYear ? Math.floor(item.PublicationYear) : "n.d.";
+            const title = item.Title || "No title available";
+            const url = item.Url || "No URL";
+            const conference = item.ConferenceName || "No conference title available";
+            const accessedDate = new Date().toLocaleDateString();
+            const medium = item.Medium || "N/A";
+
+            switch (item.ItemType) {
+                case 'Book':
+                    const publisher = item.Publisher || "No publisher info";
+                    return `${author} (${year}) *${title}*. ${publisher}. Available at: ${url} (Accessed: ${accessedDate}).`;
+
+                case 'Journal article':
+                    const journal = item.PublicationTitle || "No journal info";
+                    const pages = item.Pages || "No page info";
+                    return `${author} (${year}) '${title}', *${journal}*, pp. ${pages}. Available at: ${url} (Accessed: ${accessedDate}).`;
+
+                case 'Conference paper':
+                    const conference = item.PublicationTitle || "No conference info";
+                    return `${author} (${year}) '${title}', presented at *${conference}*. Available at: ${url} (Accessed: ${accessedDate}).`;
+
+                case 'Webpage':
+                    return `${author} (${year}) '${title}'. Available at: ${url} (Accessed: ${accessedDate}).`;
+
+                case 'Presentation':
+                    //return `${author} (${year}) '${title}' [${medium}]. Available at: ${url} (Accessed: ${accessedDate}).`;
+                    return `${author} (${year}) '${title}' [${medium}]. ${conference}. Available at: ${url} (Accessed: ${accessedDate}).`;
+
+                default:
+                    // Generic fallback format
+                    return `${author} (${year}) '${title}'. Available at: ${url} (Accessed: ${accessedDate}).`;
+            }
+        }
+
+        // Event listener for copy buttons
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('copy-citation-btn')) {
+                const citation = event.target.getAttribute('data-citation');
+                navigator.clipboard.writeText(citation).then(() => {
+                    alert('Citation copied to clipboard!');
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                });
+            }
+        });
 
         function applyFilterAndSearch() {
             const filtered = data.filter(item => {
