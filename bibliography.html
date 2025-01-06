@@ -3,21 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover comprehensive knowledge and resources about Process Mining">
     <title>Bibliography</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding-bottom: 70px; /* Ensure space for fixed pagination */
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+        }
+        header .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        header .navbar-brand span {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        header .navbar-toggler {
+            border: none;
+        }
+        header .navbar-toggler-icon {
+            color: white;
+        }
+        header .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: bold;
+        }
+        header .navbar-nav .nav-link:hover {
+            text-decoration: underline;
+        }
+        .search-container {
+            margin: 20px 0;
+            position: relative;
+        }
+        #searchInput {
+            padding-right: 30px;
+        }
+        .clear-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #aaa;
+        }
+        .clear-btn:hover {
+            color: #000;
+        }
+        .filter-buttons {
+            margin-bottom: 20px;
+        }
+        .filter-buttons button {
+            margin-right: 10px;
+        }
+        .accordion-button:not(.collapsed) {
+            color: #007bff;
+            background-color: #e9ecef;
+        }
+        .no-items {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #888;
+        }
+        .fixed-pagination {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
     <!-- Responsive Header -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark" role="navigation" aria-label="Main Navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <!-- Logo and Brand -->
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="logo-placeholder.png" alt="Logo of the Website 'All About Process Mining'">
-                    <span>All About Process Intelligence</span>
+                    <img src="logo-placeholder.png" alt="Logo">
+                    <span>All About Process Mining</span>
                 </a>
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,13 +101,10 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="bibliography.html">Bibliography</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="imprint.html">About & Imprint</a>
+                            <a class="nav-link" href="imprint.html">Imprint</a>
                         </li>
                     </ul>
                 </div>
@@ -41,38 +112,32 @@
         </nav>
     </header>
 
-    <main class="container mt-5">
-        <section class="mb-5">
-            <h1 class="text-primary">Bibliography</h1>
-            <p>
-                The <b>Bibliography Page</b> offers a curated list of academic papers, articles, books, and online resources relevant to your field. Use the <b>Search Box</b> to quickly find specific content by entering keywords, and apply a <b>Filter Option</b> to display references from a chosen year or range.
-            </p>
-            <div class="search-container" role="search">
-                <label for="searchInput" class="visually-hidden">Search in Title, Author, Editor, Tags, and Abstract</label>
-                <input type="text" id="searchInput" class="form-control" placeholder="Search in Title, Author, Editor, Tags, and Abstract" aria-label="Search box">
-                <span class="clear-btn" id="clearSearch">&times;</span>
-            </div>
-            <div class="filter-buttons" role="group" aria-label="Filter Options">
-                <button class="btn btn-primary" id="filterAll" aria-pressed="true">All</button>
-                <button class="btn btn-outline-primary" id="filter2024" aria-pressed="false">from 2024</button>
-                <button class="btn btn-outline-primary" id="filter2016" aria-pressed="false">from 2016</button>
-                <button class="btn btn-outline-primary" id="filterBefore2016" aria-pressed="false">before 2016</button>
-            </div>
-        </section>
+    <div class="container">
+        <!-- Search and Filter Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search in Title, Author, Editor, Tags, and Abstract">
+            <span class="clear-btn" id="clearSearch">&times;</span>
+        </div>
+        <div class="filter-buttons">
+            <button class="btn btn-primary" id="filterAll">All</button>
+            <button class="btn btn-outline-primary" id="filter2024">from 2024</button>
+            <button class="btn btn-outline-primary" id="filter2016">from 2016</button>
+            <button class="btn btn-outline-primary" id="filterBefore2016">before 2016</button>
+        </div>
 
         <!-- Bibliography List with Accordion -->
-        <div class="accordion" id="bibliographyAccordion" role="region" aria-label="Bibliography List">
+        <div class="accordion" id="bibliographyAccordion">
             <!-- Dynamic content will be rendered here -->
         </div>
 
         <!-- No Items Message -->
-        <div class="no-items" id="noItemsMessage" style="display: none;" role="alert">No items found.</div>
-    </main>
+        <div class="no-items" id="noItemsMessage" style="display: none;">No items found.</div>
+    </div>
 
     <!-- Fixed Pagination -->
-    <nav class="fixed-pagination" id="pagination" aria-label="Pagination">
+    <div class="fixed-pagination" id="pagination">
         <!-- Pagination buttons will be dynamically rendered here -->
-    </nav>
+    </div>
 
     <script>
         let data = null;
@@ -91,45 +156,40 @@
 
         function renderPagination(data) {
             const totalPages = Math.ceil(data.length / rowsPerPage);
-            const paginationContainer = document.getElementById("pagination");
-            paginationContainer.innerHTML = "";
+            const paginationContainer = $("#pagination");
+            paginationContainer.empty();
 
             const visiblePages = 5;
             const startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
             const endPage = Math.min(totalPages, startPage + visiblePages - 1);
 
             if (currentPage > 1) {
-                const prevButton = document.createElement("button");
-                prevButton.className = "btn btn-outline-primary";
-                prevButton.textContent = "Previous";
-                prevButton.addEventListener("click", () => {
-                    if (currentPage > 1) currentPage--;
-                    updateBibliographyAndPagination();
-                });
-                paginationContainer.appendChild(prevButton);
+                paginationContainer.append('<button class="btn btn-outline-primary" id="prevPage">Previous</button>');
             }
 
             for (let i = startPage; i <= endPage; i++) {
-                const pageButton = document.createElement("button");
-                pageButton.className = `btn ${i === currentPage ? 'btn-primary' : 'btn-outline-primary'} page-button`;
-                pageButton.textContent = i;
-                pageButton.addEventListener("click", () => {
-                    currentPage = i;
-                    updateBibliographyAndPagination();
-                });
-                paginationContainer.appendChild(pageButton);
+                const activeClass = i === currentPage ? 'btn-primary' : 'btn-outline-primary';
+                paginationContainer.append(`<button class="btn ${activeClass} page-button">${i}</button>`);
             }
 
             if (currentPage < totalPages) {
-                const nextButton = document.createElement("button");
-                nextButton.className = "btn btn-outline-primary";
-                nextButton.textContent = "Next";
-                nextButton.addEventListener("click", () => {
-                    if (currentPage < totalPages) currentPage++;
-                    updateBibliographyAndPagination();
-                });
-                paginationContainer.appendChild(nextButton);
+                paginationContainer.append('<button class="btn btn-outline-primary" id="nextPage">Next</button>');
             }
+
+            $("#prevPage").on("click", function () {
+                if (currentPage > 1) currentPage--;
+                updateBibliographyAndPagination();
+            });
+
+            $("#nextPage").on("click", function () {
+                if (currentPage < totalPages) currentPage++;
+                updateBibliographyAndPagination();
+            });
+
+            $(".page-button").on("click", function () {
+                currentPage = parseInt($(this).text());
+                updateBibliographyAndPagination();
+            });
         }
 
         function updateBibliographyAndPagination() {
@@ -140,15 +200,15 @@
         }
 
         function renderBibliographyList(data) {
-            const accordion = document.getElementById("bibliographyAccordion");
-            const noItemsMessage = document.getElementById("noItemsMessage");
+            const accordion = $("#bibliographyAccordion");
+            const noItemsMessage = $("#noItemsMessage");
 
-            accordion.innerHTML = "";
+            accordion.empty();
             if (data.length === 0) {
-                noItemsMessage.style.display = "block";
+                noItemsMessage.show();
                 return;
             }
-            noItemsMessage.style.display = "none";
+            noItemsMessage.hide();
 
             data.forEach((item, index) => {
                 const entry = `
@@ -175,137 +235,21 @@
                                 <p><strong>Source:</strong> 
                                     <a href="${item.Url || '#'}" target="_blank">Download or link to the source</a>
                                 </p>
-                                <button class="btn btn-outline-secondary copy-citation-btn" data-citation="${generateCitation(item)}">Copy Citation</button>
                             </div>
                         </div>
                     </div>
                 `;
-                accordion.innerHTML += entry;
+                accordion.append(entry);
             });
         }
-
-        function generateCitation(item) {
-            const author = item.Author || "N/A";
-            const year = item.PublicationYear ? Math.floor(item.PublicationYear) : "n.d.";
-            const title = item.Title || "No title available";
-            const url = item.Url || "No URL";
-            const accessedDate = new Date().toLocaleDateString();
-            const conference = item.PublicationTitle || "No conference info";
-            const medium = "item.Type";
-            const publisher = item.Publisher || "No publisher info";
-            const journal = item.PublicationTitle || "No journal info";
-            const pages = item.Pages || "No page info";
-            const meeting = "item.MeetingName"
-
-            switch (item.ItemType) {
-                case 'Blog post':
-                return `${author} (${year}) '${title}', *${blogName}*. Available at: ${url} (Accessed: ${accessedDate}).`;
-
-                case 'Book':
-                    return `${author} (${year}) *${title}*. ${publisher}. Available at: ${url} (Accessed: ${accessedDate}).`;     
-                    
-                case 'Book cection':
-                    return `${author} (${year}) *${title}*. ${publisher}. Available at: ${url} (Accessed: ${accessedDate}).`;   
-
-                case 'Conference paper':
-                    return `${author} (${year}) '${title}', presented at *${conference}*. Available at: ${url} (Accessed: ${accessedDate}).`;
-
-                case 'Document':
-                    return `${author} (${year}) '${title}', ${documentType}. ${publisher}. Available at: ${url} (Accessed: ${accessedDate}).`;
-
-                case 'Journal article':
-                    return `${author} (${year}) '${title}', *${journal}*, pp. ${pages}. Available at: ${url} (Accessed: ${accessedDate}).`;    
-                    
-                case 'Podcast':
-                    return `${author} (${year}) '${title}', *${podcastName}*. ${publisher}. Available at: ${url} (Accessed: ${accessedDate}).`;
-
-                case 'Preprint':
-                    return `${author} (${year}) '${title}', *Preprint*. ${repository}. Available at: ${url} (Accessed: ${accessedDate}).`;
-
-                case 'Presentation':
-                    return `${author} (${year}) '${title}' [${medium}]. ${meeting}. Available at: ${url} (Accessed: ${accessedDate}).`;
-
-                case 'Report':
-                    return `${author} (${year}) '${title}', Report. ${publisher}. Available at: ${url} (Accessed: ${accessedDate}).`;
-
-                case 'Thesis':
-                    const thesisType = item.ThesisType || "Thesis";
-                    return `${author} (${year}) '${title}', ${thesisType}. ${institution}. Available at: ${url} (Accessed: ${accessedDate}).`;
-
-                case 'Video recording':
-                    const platform = item.PublicationTitle || "No platform info";
-                    return `${author} (${year}) '${title}', *${platform}*. Available at: ${url} (Accessed: ${accessedDate}).`;
-
-
-                case 'Web page':
-                    return `${author} (${year}) '${title}'. Available at: ${url} (Accessed: ${accessedDate}).`;
-
-                default:
-                    // Generic fallback format
-                    return `${author} (${year}) '${title}'. Available at: ${url} (Accessed: ${accessedDate}).`;
-            }
-        }
-
-        function copyCitationToClipboard(citation) {
-            // Extract italicized text
-            const italicizedText = extractItalicizedText(citation);
-
-            if (!italicizedText) {
-                alert("No italicized text found!");
-                return;
-            }
-
-            // Create the HTML citation with italics
-            const htmlCitation = citation.replace(
-                `*${italicizedText}*`,
-                `<i>${italicizedText}</i>`
-            );
-
-            // Wrap the HTML string for clipboard
-            const clipboardContent = `
-                <html>
-                    <body>
-                        ${htmlCitation}
-                    </body>
-                </html>
-            `;
-
-            // Copy to clipboard
-            navigator.clipboard.write([
-                new ClipboardItem({
-                    "text/plain": new Blob([citation], { type: "text/plain" }),
-                    "text/html": new Blob([clipboardContent], { type: "text/html" })
-                })
-            ])
-            .then(() => alert("Citation copied to clipboard!"))
-            .catch(err => console.error("Failed to copy text: ", err));
-        }
-
-        function extractItalicizedText(citation) {
-            // Regular expression to capture text between asterisks
-            const italicMatch = citation.match(/\*(.*?)\*/);
-            return italicMatch ? italicMatch[1] : null; // Return the matched text or null if not found
-        }
-
-        // Event listener for copy buttons
-        document.addEventListener('click', function (event) {
-            if (event.target.classList.contains('copy-citation-btn')) {
-                const citation = event.target.getAttribute('data-citation');
-                navigator.clipboard.writeText(copyCitationToClipboard(citation)).then(() => {
-                    alert('Citation copied to clipboard!');
-                }).catch(err => {
-                    console.error('Failed to copy text: ', err);
-                });
-            }
-        });
 
         function applyFilterAndSearch() {
             const filtered = data.filter(item => {
                 const year = parseInt(item.PublicationYear);
                 if (year) {
-                    if (document.getElementById("filter2024").classList.contains("btn-primary") && year < 2024) return false;
-                    if (document.getElementById("filter2016").classList.contains("btn-primary") && year < 2016) return false;
-                    if (document.getElementById("filterBefore2016").classList.contains("btn-primary") && year >= 2016) return false;
+                    if ($("#filter2024").hasClass("btn-primary") && year < 2024) return false;
+                    if ($("#filter2016").hasClass("btn-primary") && year < 2016) return false;
+                    if ($("#filterBefore2016").hasClass("btn-primary") && year >= 2016) return false;
                 }
                 return true;
             });
@@ -331,48 +275,34 @@
         }
 
         function activateFilterButton(buttonId) {
-            document.querySelectorAll(".filter-buttons button").forEach(button => {
-                button.classList.remove("btn-primary");
-                button.classList.add("btn-outline-primary");
-            });
-            const activeButton = document.getElementById(buttonId);
-            activeButton.classList.remove("btn-outline-primary");
-            activeButton.classList.add("btn-primary");
+            $(".filter-buttons button").removeClass("btn-primary").addClass("btn-outline-primary");
+            $(`#${buttonId}`).removeClass("btn-outline-primary").addClass("btn-primary");
             applyFilterAndSearch();
         }
 
-        async function fetchDataAndInitialize() {
-            try {
-                const response = await fetch('https://solterbeck.github.io/AboutProcessMining/library_full_data.json');
-                if (!response.ok) throw new Error('Failed to fetch data');
-                data = sortDataByTitle(await response.json());
-                filteredData = [...data];
-                currentPage = 1;
-                applyFilterAndSearch();
-            } catch (error) {
-                console.error('Error loading data:', error);
-            }
-        }
-
-        document.getElementById("filterAll").addEventListener("click", () => activateFilterButton("filterAll"));
-        document.getElementById("filter2024").addEventListener("click", () => activateFilterButton("filter2024"));
-        document.getElementById("filter2016").addEventListener("click", () => activateFilterButton("filter2016"));
-        document.getElementById("filterBefore2016").addEventListener("click", () => activateFilterButton("filterBefore2016"));
-
-        document.getElementById("searchInput").addEventListener("input", function () {
-            searchQuery = this.value.toLowerCase();
+        $.getJSON('https://solterbeck.github.io/AboutProcessMining/library_full_data.json', function (response) {
+            data = sortDataByTitle(response);
+            filteredData = [...data];
+            currentPage = 1;
             applyFilterAndSearch();
         });
 
-        document.getElementById("clearSearch").addEventListener("click", function () {
-            document.getElementById("searchInput").value = "";
+        $("#filterAll").on("click", () => activateFilterButton("filterAll"));
+        $("#filter2024").on("click", () => activateFilterButton("filter2024"));
+        $("#filter2016").on("click", () => activateFilterButton("filter2016"));
+        $("#filterBefore2016").on("click", () => activateFilterButton("filterBefore2016"));
+
+        $("#searchInput").on("input", function () {
+            searchQuery = $(this).val().toLowerCase();
+            applyFilterAndSearch();
+        });
+
+        $("#clearSearch").on("click", function () {
+            $("#searchInput").val("");
             searchQuery = "";
             applyFilterAndSearch();
         });
-
-        fetchDataAndInitialize();
     </script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
