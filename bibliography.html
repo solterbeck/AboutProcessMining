@@ -175,7 +175,7 @@
                                 <p><strong>Source:</strong> 
                                     <a href="${item.Url || '#'}" target="_blank">Download or link to the source</a>
                                 </p>
-                                
+                                <button class="btn btn-outline-secondary copy-citation-btn" data-citation="${generateCitation(item)}">Copy Citation</button>
                             </div>
                         </div>
                     </div>
@@ -191,26 +191,54 @@
             const url = item.Url || "No URL";
             const accessedDate = new Date().toLocaleDateString();
             const conference = item.PublicationTitle || "No conference info";
-            const medium = item.Medium || "N/A";
+            const medium = "item.Type";
+            const publisher = item.Publisher || "No publisher info";
+            const journal = item.PublicationTitle || "No journal info";
+            const pages = item.Pages || "No page info";
+            const meeting = "item.MeetingName"
 
             switch (item.ItemType) {
-                case 'Book':
-                    const publisher = item.Publisher || "No publisher info";
-                    return `${author} (${year}) *${title}*. ${publisher}. Available at: ${url} (Accessed: ${accessedDate}).`;
+                case 'Blog post':
+                return `${author} (${year}) '${title}', *${blogName}*. Available at: ${url} (Accessed: ${accessedDate}).`;
 
-                case 'Journal article':
-                    const journal = item.PublicationTitle || "No journal info";
-                    const pages = item.Pages || "No page info";
-                    return `${author} (${year}) '${title}', *${journal}*, pp. ${pages}. Available at: ${url} (Accessed: ${accessedDate}).`;
+                case 'Book':
+                    return `${author} (${year}) *${title}*. ${publisher}. Available at: ${url} (Accessed: ${accessedDate}).`;     
+                    
+                case 'Book cection':
+                    return `${author} (${year}) *${title}*. ${publisher}. Available at: ${url} (Accessed: ${accessedDate}).`;   
 
                 case 'Conference paper':
                     return `${author} (${year}) '${title}', presented at *${conference}*. Available at: ${url} (Accessed: ${accessedDate}).`;
 
-                case 'Webpage':
-                    return `${author} (${year}) '${title}'. Available at: ${url} (Accessed: ${accessedDate}).`;
+                case 'Document':
+                    return `${author} (${year}) '${title}', ${documentType}. ${publisher}. Available at: ${url} (Accessed: ${accessedDate}).`;
+
+                case 'Journal article':
+                    return `${author} (${year}) '${title}', *${journal}*, pp. ${pages}. Available at: ${url} (Accessed: ${accessedDate}).`;    
+                    
+                case 'Podcast':
+                    return `${author} (${year}) '${title}', *${podcastName}*. ${publisher}. Available at: ${url} (Accessed: ${accessedDate}).`;
+
+                case 'Preprint':
+                    return `${author} (${year}) '${title}', *Preprint*. ${repository}. Available at: ${url} (Accessed: ${accessedDate}).`;
 
                 case 'Presentation':
-                    return `${author} (${year}) '${title}' [${medium}]. ${conference}. Available at: ${url} (Accessed: ${accessedDate}).`;
+                    return `${author} (${year}) '${title}' [${medium}]. ${meeting}. Available at: ${url} (Accessed: ${accessedDate}).`;
+
+                case 'Report':
+                    return `${author} (${year}) '${title}', Report. ${publisher}. Available at: ${url} (Accessed: ${accessedDate}).`;
+
+                case 'Thesis':
+                    const thesisType = item.ThesisType || "Thesis";
+                    return `${author} (${year}) '${title}', ${thesisType}. ${institution}. Available at: ${url} (Accessed: ${accessedDate}).`;
+
+                case 'Video recording':
+                    const platform = item.PublicationTitle || "No platform info";
+                    return `${author} (${year}) '${title}', *${platform}*. Available at: ${url} (Accessed: ${accessedDate}).`;
+
+
+                case 'Web page':
+                    return `${author} (${year}) '${title}'. Available at: ${url} (Accessed: ${accessedDate}).`;
 
                 default:
                     // Generic fallback format
@@ -218,11 +246,52 @@
             }
         }
 
+        function copyCitationToClipboard(citation) {
+            // Extract italicized text
+            const italicizedText = extractItalicizedText(citation);
+
+            if (!italicizedText) {
+                alert("No italicized text found!");
+                return;
+            }
+
+            // Create the HTML citation with italics
+            const htmlCitation = citation.replace(
+                `*${italicizedText}*`,
+                `<i>${italicizedText}</i>`
+            );
+
+            // Wrap the HTML string for clipboard
+            const clipboardContent = `
+                <html>
+                    <body>
+                        ${htmlCitation}
+                    </body>
+                </html>
+            `;
+
+            // Copy to clipboard
+            navigator.clipboard.write([
+                new ClipboardItem({
+                    "text/plain": new Blob([citation], { type: "text/plain" }),
+                    "text/html": new Blob([clipboardContent], { type: "text/html" })
+                })
+            ])
+            .then(() => alert("Citation copied to clipboard!"))
+            .catch(err => console.error("Failed to copy text: ", err));
+        }
+
+        function extractItalicizedText(citation) {
+            // Regular expression to capture text between asterisks
+            const italicMatch = citation.match(/\*(.*?)\*/);
+            return italicMatch ? italicMatch[1] : null; // Return the matched text or null if not found
+        }
+
         // Event listener for copy buttons
         document.addEventListener('click', function (event) {
             if (event.target.classList.contains('copy-citation-btn')) {
                 const citation = event.target.getAttribute('data-citation');
-                navigator.clipboard.writeText(citation).then(() => {
+                navigator.clipboard.writeText(copyCitationToClipboard(citation)).then(() => {
                     alert('Citation copied to clipboard!');
                 }).catch(err => {
                     console.error('Failed to copy text: ', err);
