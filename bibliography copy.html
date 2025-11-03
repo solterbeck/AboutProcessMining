@@ -54,7 +54,7 @@
             </div>
             <div class="filter-buttons" role="group" aria-label="Filter Options">
                 <button class="btn btn-primary" id="filterAll" aria-pressed="true">All</button>
-                <button class="btn btn-outline-primary" id="filter2024" aria-pressed="false">from 2024</button>
+                <button class="btn btn-outline-primary" id="filter2025" aria-pressed="false">from 2025</button>
                 <button class="btn btn-outline-primary" id="filter2016" aria-pressed="false">from 2016</button>
                 <button class="btn btn-outline-primary" id="filterBefore2016" aria-pressed="false">before 2016</button>
             </div>
@@ -303,7 +303,7 @@
             const filtered = data.filter(item => {
                 const year = parseInt(item.PublicationYear);
                 if (year) {
-                    if (document.getElementById("filter2024").classList.contains("btn-primary") && year < 2024) return false;
+                    if (document.getElementById("filter2025").classList.contains("btn-primary") && year < 2025) return false;
                     if (document.getElementById("filter2016").classList.contains("btn-primary") && year < 2016) return false;
                     if (document.getElementById("filterBefore2016").classList.contains("btn-primary") && year >= 2016) return false;
                 }
@@ -355,7 +355,7 @@
         }
 
         document.getElementById("filterAll").addEventListener("click", () => activateFilterButton("filterAll"));
-        document.getElementById("filter2024").addEventListener("click", () => activateFilterButton("filter2024"));
+        document.getElementById("filter2025").addEventListener("click", () => activateFilterButton("filter2025"));
         document.getElementById("filter2016").addEventListener("click", () => activateFilterButton("filter2016"));
         document.getElementById("filterBefore2016").addEventListener("click", () => activateFilterButton("filterBefore2016"));
 
