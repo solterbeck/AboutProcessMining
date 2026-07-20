@@ -120,7 +120,7 @@
         </div>
         <div class="filter-buttons">
             <button class="btn btn-primary" id="filterAll">All</button>
-            <button class="btn btn-outline-primary" id="filter2025">from 2025</button>
+            <button class="btn btn-outline-primary" id="filter2026">from 2026</button>
             <button class="btn btn-outline-primary" id="filter2016">from 2016</button>
             <button class="btn btn-outline-primary" id="filterBefore2016">before 2016</button>
         </div>
@@ -247,7 +247,7 @@
             const filtered = data.filter(item => {
                 const year = parseInt(item.PublicationYear);
                 if (year) {
-                    if ($("#filter2025").hasClass("btn-primary") && year < 2025) return false;
+                    if ($("#filter2026").hasClass("btn-primary") && year < 2026) return false;
                     if ($("#filter2016").hasClass("btn-primary") && year < 2016) return false;
                     if ($("#filterBefore2016").hasClass("btn-primary") && year >= 2016) return false;
                 }
@@ -288,7 +288,7 @@
         });
 
         $("#filterAll").on("click", () => activateFilterButton("filterAll"));
-        $("#filter2025").on("click", () => activateFilterButton("filter2025"));
+        $("#filter2026").on("click", () => activateFilterButton("filter2026"));
         $("#filter2016").on("click", () => activateFilterButton("filter2016"));
         $("#filterBefore2016").on("click", () => activateFilterButton("filterBefore2016"));
 
