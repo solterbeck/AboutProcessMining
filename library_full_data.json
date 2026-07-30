@@ -120,7 +120,7 @@
   },
   {
     "Title": "A Computer Science Perspective on Digital Transformation in Production",
-    "Author": "Philipp Brauner, Manuela Dalibor, Matthias Jarke, Ike Kunze, István Koren, Gerhard Lakemeyer, Martin Liebenberg, Judith Michael, Jan Pennekamp, Christoph Quix, Bernhard Rumpe, Wil van der Aalst, Klaus Wehrle, Andreas Wortmann, Martina Ziefle",
+    "Author": "Philipp Brauner, Manuela Dalibor, Matthias Jarke, Ike Kunze, István Koren, Gerhard Lakemeyer, Martin Liebenberg, Judith Michael, Jan Pennekamp, Christoph Quix, Bernhard Rumpe, van der Aalst, Wil M. P., Klaus Wehrle, Andreas Wortmann, Martina Ziefle",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "ACM Transactions on Internet of Things",
@@ -443,7 +443,7 @@
   },
   {
     "Title": "A Python Tool for Object-Centric Process Mining Comparison",
-    "Author": "Anahita Farhang Ghahfarokhi, Wil M. P. van der Aalst",
+    "Author": "Anahita Farhang Ghahfarokhi, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -545,7 +545,7 @@
   },
   {
     "Title": "A Tour in Process Mining: From Practice to Algorithmic Challenges",
-    "Author": "Wil M. P. van der Aalst, Josep Carmona, Thomas Chatain, Boudewijn van Dongen",
+    "Author": "van der Aalst, Wil M. P., Josep Carmona, Thomas Chatain, Boudewijn van Dongen",
     "Editor": "Maciej Kuthny, Lucia Pomello, Lars Michael Kristensen",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -647,7 +647,7 @@
   },
   {
     "Title": "A generic approach to extract object-centric event data from databases supporting SAP ERP",
-    "Author": "Alessandro Berti, Gyunam Park, Majid Rafiei, Wil M. P. Van Der Aalst",
+    "Author": "Alessandro Berti, Gyunam Park, Majid Rafiei, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Journal of Intelligent Information Systems",
@@ -681,7 +681,7 @@
   },
   {
     "Title": "A practitioner’s guide to process mining: Limitations of the directly-follows graph",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": "Maria Manuela Cruz-Cunha, Ricardo Martinho, Rui Rijo, Emanuel Peres, Dulce Domingos",
     "ItemType": "journalArticle",
     "PublicationTitle": "Procedia Computer Science",
@@ -902,7 +902,7 @@
   },
   {
     "Title": "Advancements and Challenges in Object-Centric Process Mining: A Systematic Literature Review",
-    "Author": "Alessandro Berti, Marco Montali, Wil M. P. van der Aalst",
+    "Author": "Alessandro Berti, Marco Montali, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -1004,7 +1004,7 @@
   },
   {
     "Title": "All Eyes on the Workflow: Automated and Efficient Event Discovery from Video Streams",
-    "Author": "Marco Pegoraro, Jonas Seng, Dustin Heller, Wil M. P. van der Aalst, Kristian Kersting",
+    "Author": "Marco Pegoraro, Jonas Seng, Dustin Heller, van der Aalst, Wil M. P., Kristian Kersting",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -1106,7 +1106,7 @@
   },
   {
     "Title": "An Event Data Extraction Approach from SAP ERP for Process Mining",
-    "Author": "Alessandro Berti, Gyunam Park, Majid Rafiei, Wil M. P. van der Aalst",
+    "Author": "Alessandro Berti, Gyunam Park, Majid Rafiei, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "arXiv:2110.03467 [cs]",
@@ -1123,7 +1123,7 @@
   },
   {
     "Title": "An Open-Source Integration of Process Mining Features into the Camunda Workflow Engine : Data Extraction and Challenges",
-    "Author": "Alessandro Berti, Wil M. P. van der Aalst, David Zang, Magdalena Lang",
+    "Author": "Alessandro Berti, van der Aalst, Wil M. P., David Zang, Magdalena Lang",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "4 Seiten (2020).",
@@ -1140,7 +1140,7 @@
   },
   {
     "Title": "An XES Extension for Uncertain Event Data",
-    "Author": "Marco Pegoraro, Merih Seran Uysal, Wil M. P. van der Aalst",
+    "Author": "Marco Pegoraro, Merih Seran Uysal, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "document",
     "PublicationTitle": null,
@@ -1174,7 +1174,7 @@
   },
   {
     "Title": "An optimized backbone-based process layout generation method using integer programming and heuristics to enhance user comprehension",
-    "Author": "Deoksang Lee, Minseok Song, Wil M.P. Van Der Aalst",
+    "Author": "Deoksang Lee, Minseok Song, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Data & Knowledge Engineering",
@@ -1208,7 +1208,7 @@
   },
   {
     "Title": "Analysis of railway stations by means of interval timed coloured Petri nets",
-    "Author": "Wil M. P. van der Aalst, M. A. Odijk",
+    "Author": "van der Aalst, Wil M. P., M. A. Odijk",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Real-Time Systems",
@@ -1242,7 +1242,7 @@
   },
   {
     "Title": "Analyzing An After-Sales Service Process Using Object-Centric Process Mining: A Case Study",
-    "Author": "Gyunam Park, Sevde Aydin, Cuneyt Ugur, Wil M. P. van der Aalst",
+    "Author": "Gyunam Park, Sevde Aydin, Cuneyt Ugur, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -1310,7 +1310,7 @@
   },
   {
     "Title": "Analyzing interconnected processes: using object-centric process mining to analyze procurement processes",
-    "Author": "Alessandro Berti, Urszula Jessen, Gyunam Park, Majid Rafiei, Wil M. P. van Der Aalst",
+    "Author": "Alessandro Berti, Urszula Jessen, Gyunam Park, Majid Rafiei, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "International Journal of Data Science and Analytics",
@@ -2143,7 +2143,7 @@
   },
   {
     "Title": "Bringing Data Insights and Automation Together: The Next Big Thing in Process Mining",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "blogPost",
     "PublicationTitle": null,
@@ -2245,7 +2245,7 @@
   },
   {
     "Title": "Building instance graphs for highly variable processes",
-    "Author": "Claudia Diamantini, Laura Genga, Domenico Potena, Wil van der Aalst",
+    "Author": "Claudia Diamantini, Laura Genga, Domenico Potena, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Expert Systems with Applications",
@@ -2466,7 +2466,7 @@
   },
   {
     "Title": "Business Process Simulation Revisited",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": "Joseph Barjis",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -2568,7 +2568,7 @@
   },
   {
     "Title": "Business process mining: An industrial application",
-    "Author": "Wil M. P. van der Aalst, H.A. Reijers, A.J.M.M. Weijters, B.F. van Dongen, A.K. Alves de Medeiros, M. Song, H.M.W. Verbeek",
+    "Author": "van der Aalst, Wil M. P., H.A. Reijers, A.J.M.M. Weijters, B.F. van Dongen, A.K. Alves de Medeiros, M. Song, H.M.W. Verbeek",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Information Systems",
@@ -2585,7 +2585,7 @@
   },
   {
     "Title": "Business process simulation survival guide",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": "Jan vom Brocke, Michael Rosemann",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -2636,7 +2636,7 @@
   },
   {
     "Title": "Case Level Counterfactual Reasoning in Process Mining",
-    "Author": "Mahnaz Sadat Qafari, Wil van der Aalst",
+    "Author": "Mahnaz Sadat Qafari, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "arXiv:2102.13490 [cs]",
@@ -2670,7 +2670,7 @@
   },
   {
     "Title": "Case notion discovery and recommendation: automated event log building on databases",
-    "Author": "E. González López de Murillas, H. A. Reijers, Wil M. P. van der Aalst",
+    "Author": "E. González López de Murillas, H. A. Reijers, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Knowledge and Information Systems",
@@ -2840,7 +2840,7 @@
   },
   {
     "Title": "Combining value stream mapping and process mining in production: a systematic literature review",
-    "Author": "Tim Teriete, Klaus Erlach, Thomas Bauernhansl, Wil M. P. Van Der Aalst",
+    "Author": "Tim Teriete, Klaus Erlach, Thomas Bauernhansl, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Discover Applied Sciences",
@@ -3027,7 +3027,7 @@
   },
   {
     "Title": "Concurrency and Objects Matter! Disentangling the Fabric of Real Operational Processes to Create Digital Twins",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": "Antonio Cerone, Peter Csaba Ölveczky",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -3044,7 +3044,7 @@
   },
   {
     "Title": "Configurable Event Correlation for Process Discovery from Object-Centric Event Data",
-    "Author": "Guangming Li, Renata Medeiros de Carvalho, Wil M. P. van der Aalst",
+    "Author": "Guangming Li, Renata Medeiros de Carvalho, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -3061,7 +3061,7 @@
   },
   {
     "Title": "Conformance Checking Approximation Using Subset Selection and Edit Distance",
-    "Author": "Mohammadreza Fani Sani, Sebastiaan J. van Zelst, Wil M. P. van der Aalst",
+    "Author": "Mohammadreza Fani Sani, Sebastiaan J. van Zelst, van der Aalst, Wil M. P.",
     "Editor": "Schahram Dustdar, Eric Yu, Camille Salinesi, Vik Pant",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -3146,7 +3146,7 @@
   },
   {
     "Title": "Conformance checking of processes based on monitoring real behavior",
-    "Author": "Anne Rozinat, Wil M. P. van der Aalst",
+    "Author": "Anne Rozinat, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Information Systems",
@@ -3163,7 +3163,7 @@
   },
   {
     "Title": "Conformance checking over uncertain event data",
-    "Author": "Marco Pegoraro, Merih Seran Uysal, Wil M. P. van der Aalst",
+    "Author": "Marco Pegoraro, Merih Seran Uysal, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Information Systems",
@@ -3180,7 +3180,7 @@
   },
   {
     "Title": "Connecting databases with process mining: a meta model and toolset",
-    "Author": "Eduardo González López de Murillas, Hajo A. Reijers, Wil M. P. van der Aalst",
+    "Author": "Eduardo González López de Murillas, Hajo A. Reijers, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Software & Systems Modeling",
@@ -3316,7 +3316,7 @@
   },
   {
     "Title": "Cortado—An Interactive Tool for Data-Driven Process Discovery and Modeling",
-    "Author": "Daniel Schuster, Sebastiaan J. van Zelst, Wil M. P. van der Aalst",
+    "Author": "Daniel Schuster, Sebastiaan J. van Zelst, van der Aalst, Wil M. P.",
     "Editor": "Didier Buchs, Josep Carmona",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -3350,7 +3350,7 @@
   },
   {
     "Title": "Creating Translucent Event Logs to Improve Process Discovery",
-    "Author": "Harry H. Beyel, Wil M. P. Van Der Aalst",
+    "Author": "Harry H. Beyel, van der Aalst, Wil M. P.",
     "Editor": "Marco Montali, Arik Senderovich, Matthias Weidlich",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -3690,7 +3690,7 @@
   },
   {
     "Title": "Data-based description of process performance in end-to-end order processing",
-    "Author": "Günther Schuh, Andreas Gützlaff, Seth Schmitz, Wil M. P. van der Aalst",
+    "Author": "Günther Schuh, Andreas Gützlaff, Seth Schmitz, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "CIRP Annals",
@@ -3826,7 +3826,7 @@
   },
   {
     "Title": "Defining Cases and Variants for Object-Centric Event Data",
-    "Author": "Jan Niklas Adams, Daniel Schuster, Seth Schmitz, Gunther Schuh, Wil M. P. van der Aalst",
+    "Author": "Jan Niklas Adams, Daniel Schuster, Seth Schmitz, Gunther Schuh, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -3843,7 +3843,7 @@
   },
   {
     "Title": "Defining and visualizing process execution variants from partially ordered event data",
-    "Author": "Daniel Schuster, Francesca Zerbato, Sebastiaan J. Van Zelst, Wil M. P. Van Der Aalst",
+    "Author": "Daniel Schuster, Francesca Zerbato, Sebastiaan J. Van Zelst, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Information Sciences",
@@ -4863,7 +4863,7 @@
   },
   {
     "Title": "Discovering High-Quality Process Models Despite Data Scarcity",
-    "Author": "Jan Niklas Adams, Jari Peeperkorn, Tobias Brockhoff, Isabelle Terrier, Heiko Göhner, Merih Seran Uysal, Seppe vanden Broucke, Jochen De Weerdt, Wil M. P. van der Aalst",
+    "Author": "Jan Niklas Adams, Jari Peeperkorn, Tobias Brockhoff, Isabelle Terrier, Heiko Göhner, Merih Seran Uysal, Seppe vanden Broucke, Jochen De Weerdt, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -4880,7 +4880,7 @@
   },
   {
     "Title": "Discovering Object-Centric Petri Nets",
-    "Author": "Wil M. P. van der Aalst, Alessandro Berti",
+    "Author": "van der Aalst, Wil M. P., Alessandro Berti",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -4897,7 +4897,7 @@
   },
   {
     "Title": "Discovering Object-centric Petri Nets",
-    "Author": "Wil M. P. van der Aalst, Alessandro Berti",
+    "Author": "van der Aalst, Wil M. P., Alessandro Berti",
     "Editor": "Maurice Ter Beek, Maciej Koutny, Grzegorz Rozenberg",
     "ItemType": "journalArticle",
     "PublicationTitle": "Fundamenta Informaticae",
@@ -4914,7 +4914,7 @@
   },
   {
     "Title": "Discovering Process Models With Long-Term Dependencies While Providing Guarantees and Filtering Infrequent Behavior Patterns",
-    "Author": "Lisa Luise Mannel, Wil M. P. van der Aalst",
+    "Author": "Lisa Luise Mannel, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -4931,7 +4931,7 @@
   },
   {
     "Title": "Discovering high-level BPMN process models from event data",
-    "Author": "Anna Kalenkova, Andrea Burattin, Massimiliano de Leoni, Wil M. P. van der Aalst, Alessandro Sperduti",
+    "Author": "Anna Kalenkova, Andrea Burattin, Massimiliano de Leoni, van der Aalst, Wil M. P., Alessandro Sperduti",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Business Process Management Journal",
@@ -4965,7 +4965,7 @@
   },
   {
     "Title": "Discovering simulation models",
-    "Author": "A. Rozinat, R.S. Mans, M. Song, Wil M. P. Van Der Aalst",
+    "Author": "A. Rozinat, R.S. Mans, M. Song, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Information Systems",
@@ -5050,7 +5050,7 @@
   },
   {
     "Title": "Do you want to do a process mining project?",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "document",
     "PublicationTitle": null,
@@ -5118,7 +5118,7 @@
   },
   {
     "Title": "Efficient Construction of Behavior Graphs for Uncertain Event Data",
-    "Author": "Marco Pegoraro, Merih Seran Uysal, Wil M. P. van der Aalst",
+    "Author": "Marco Pegoraro, Merih Seran Uysal, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -5135,7 +5135,7 @@
   },
   {
     "Title": "Efficient Logging for Blockchain Applications",
-    "Author": "Christopher Klinkmüller, Ingo Weber, Alexander Ponomarev, An Binh Tran, Wil M. P. van der Aalst",
+    "Author": "Christopher Klinkmüller, Ingo Weber, Alexander Ponomarev, An Binh Tran, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "arXiv:2001.10281 [cs]",
@@ -5169,7 +5169,7 @@
   },
   {
     "Title": "Efficient Time and Space Representation of Uncertain Event Data",
-    "Author": "Marco Pegoraro, Merih Seran Uysal, Wil M. P. van der Aalst",
+    "Author": "Marco Pegoraro, Merih Seran Uysal, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Algorithms",
@@ -5322,7 +5322,7 @@
   },
   {
     "Title": "Enhancing Data-Awareness of Object-Centric Event Logs",
-    "Author": "Alexandre Goossens, Johannes De Smedt, Jan Vanthienen, Wil M. P. Van Der Aalst",
+    "Author": "Alexandre Goossens, Johannes De Smedt, Jan Vanthienen, van der Aalst, Wil M. P.",
     "Editor": "Marco Montali, Arik Senderovich, Matthias Weidlich",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -5475,7 +5475,7 @@
   },
   {
     "Title": "Evaluating the Effectiveness of Interactive Process Discovery in Healthcare: A Case Study",
-    "Author": "Elisabetta Benevento, Prabhakar M. Dixit, M. F. Sani, Davide Aloini, Wil M. P. van der Aalst",
+    "Author": "Elisabetta Benevento, Prabhakar M. Dixit, M. F. Sani, Davide Aloini, van der Aalst, Wil M. P.",
     "Editor": "Chiara Di Francescomarino, Remco Dijkman, Uwe Zdun",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -5509,7 +5509,7 @@
   },
   {
     "Title": "Event Abstraction for Process Mining Using Supervised Learning Techniques",
-    "Author": "Niek Tax, Natalia Sidorova, Reinder Haakma, Wil M. P. van der Aalst",
+    "Author": "Niek Tax, Natalia Sidorova, Reinder Haakma, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -5526,7 +5526,7 @@
   },
   {
     "Title": "Event Log Sampling for Predictive Monitoring: 2nd International Workshop on Leveraging Machine Learning in Process Mining, ML4PM 2021",
-    "Author": "Mohammadreza Fani Sani, Mozhgan Vazifehdoostirani, Gyunam Park, Marco Pegoraro, Sebastiaan J. van Zelst, Wil M. P. van der Aalst",
+    "Author": "Mohammadreza Fani Sani, Mozhgan Vazifehdoostirani, Gyunam Park, Marco Pegoraro, Sebastiaan J. van Zelst, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -5815,7 +5815,7 @@
   },
   {
     "Title": "Extracting Event Data from Databases to Unleash Process Mining",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": "Jan vom Brocke, Theresa Schmiedel",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -5832,7 +5832,7 @@
   },
   {
     "Title": "Extracting Multiple Viewpoint Models from Relational Databases",
-    "Author": "Alessandro Berti, Wil van der Aalst",
+    "Author": "Alessandro Berti, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -5849,7 +5849,7 @@
   },
   {
     "Title": "Extracting Object-Centric Event Logs to Support Process Mining on Databases",
-    "Author": "Guangming Li, Eduardo González López de Murillas, Renata Medeiros de Carvalho, Wil M. P. van der Aalst",
+    "Author": "Guangming Li, Eduardo González López de Murillas, Renata Medeiros de Carvalho, van der Aalst, Wil M. P.",
     "Editor": "Jan Mendling, Haralambos Mouratidis",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -5900,7 +5900,7 @@
   },
   {
     "Title": "Federated Process Mining: Exploiting Event Data Across Organizational Boundaries",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -5917,7 +5917,7 @@
   },
   {
     "Title": "Flexible and Hierarchical Decomposition of Workflow Nets for Process Analysis",
-    "Author": "Tsung-Hao Huang, Lukas M. Jansen, Marco Pegoraro, Gyunam Park, Wil M. P. Van Der Aalst",
+    "Author": "Tsung-Hao Huang, Lukas M. Jansen, Marco Pegoraro, Gyunam Park, van der Aalst, Wil M. P.",
     "Editor": "Lidia Fuentes, Pierluigi Plebani, Carlo Combi, Hajo Reijers",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -6002,7 +6002,7 @@
   },
   {
     "Title": "From Identities to Quantities: Introducing Items and Decoupling Points to Object-centric Process Mining",
-    "Author": "Nina Graves, István Koren, Majid Rafiei, Wil M. P. van der Aalst",
+    "Author": "Nina Graves, István Koren, Majid Rafiei, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -6138,7 +6138,7 @@
   },
   {
     "Title": "Fuzzy Mining – Adaptive Process Simplification Based on Multi-perspective Metrics",
-    "Author": "Christian W. Günther, Wil M. P. van der Aalst",
+    "Author": "Christian W. Günther, van der Aalst, Wil M. P.",
     "Editor": "Gustavo Alonso, Peter Dadam, Michael Rosemann",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -6206,7 +6206,7 @@
   },
   {
     "Title": "Grouping Local Process Models",
-    "Author": "Viki Peeva, Wil M. P. van der Aalst",
+    "Author": "Viki Peeva, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -6308,7 +6308,7 @@
   },
   {
     "Title": "High-Level Event Mining: Overview and Future Work",
-    "Author": "Bianka Bakullari, Wil M. P. van der Aalst",
+    "Author": "Bianka Bakullari, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -6410,7 +6410,7 @@
   },
   {
     "Title": "How to Write Beautiful Process-and-Data-Science Papers?",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "arXiv:2203.09286 [cs]",
@@ -6495,7 +6495,7 @@
   },
   {
     "Title": "Hybrid Intelligence: to automate or not to automate, that is the question",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "IJISPM - International Journal of Information Systems and Project Management",
@@ -6580,7 +6580,7 @@
   },
   {
     "Title": "Improving Precision in Process Trees Using Subprocess Tree Logs",
-    "Author": "Christian Rennert, Wil M. P. van der Aalst",
+    "Author": "Christian Rennert, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -6614,7 +6614,7 @@
   },
   {
     "Title": "Improving Process Discovery Using Translucent Activity Relationships",
-    "Author": "Harry H. Beyel, Wil M. P. Van Der Aalst",
+    "Author": "Harry H. Beyel, van der Aalst, Wil M. P.",
     "Editor": "Andrea Marrella, Manuel Resinas, Mieke Jans, Michael Rosemann",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -6972,7 +6972,7 @@
   {
     "Title": "Internet of production: fundamentals, applications and proceedings",
     "Author": null,
-    "Editor": "Christian Brecher, Günther Schuh, Wil M. P. van der Aalst, Matthias Jarke, Frank T. Piller, Melanie Padberg",
+    "Editor": "Christian Brecher, Günther Schuh, van der Aalst, Wil M. P., Matthias Jarke, Frank T. Piller, Melanie Padberg",
     "ItemType": "book",
     "PublicationTitle": null,
     "Publisher": "Springer",
@@ -7124,7 +7124,7 @@
   },
   {
     "Title": "Knowledge-Driven Hallucination in Large Language Models: An Empirical Study on Process Modeling",
-    "Author": "Humam Kourani, Anton Antonov, Alessandro Berti, Wil M. P. van der Aalst",
+    "Author": "Humam Kourani, Anton Antonov, Alessandro Berti, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -7464,7 +7464,7 @@
   },
   {
     "Title": "Mining Blockchain Processes: Extracting Process Mining Data from Blockchain Applications",
-    "Author": "Christopher Klinkmüller, Alexander Ponomarev, An Binh Tran, Ingo Weber, Wil M. P. van der Aalst",
+    "Author": "Christopher Klinkmüller, Alexander Ponomarev, An Binh Tran, Ingo Weber, van der Aalst, Wil M. P.",
     "Editor": "Claudio Di Ciccio, Renata Gabryelczyk, Luciano García-Bañuelos, Tomislav Hernaus, Richard Hull, Andrea Kő, Mark Staples",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -7498,7 +7498,7 @@
   },
   {
     "Title": "Mining Uncertain Event Data in Process Mining",
-    "Author": "Marco Pegoraro, Wil M. P. van der Aalst",
+    "Author": "Marco Pegoraro, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -7549,7 +7549,7 @@
   },
   {
     "Title": "Mining local process models",
-    "Author": "Niek Tax, Natalia Sidorova, Reinder Haakma, Wil M. P. van der Aalst",
+    "Author": "Niek Tax, Natalia Sidorova, Reinder Haakma, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Journal of Innovation in Digital Ecosystems",
@@ -7617,7 +7617,7 @@
   },
   {
     "Title": "Modeling Digital Shadows in Manufacturing by Using Process Mining",
-    "Author": "Brockhoff, Tobias, Seran, Merih Uysal, van der Aalst, Wil",
+    "Author": "Brockhoff, Tobias, Seran, Merih Uysal, van der Aalst, Wil M. P.",
     "Editor": "Judith Michael, Jérôme Pfeiffer, Andreas Wortmann",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -7719,7 +7719,7 @@
   },
   {
     "Title": "Multidimensional Process Mining Using Process Cubes",
-    "Author": "Alfredo Bolt, Wil M. P. van der Aalst",
+    "Author": "Alfredo Bolt, van der Aalst, Wil M. P.",
     "Editor": "Khaled Gaaloul, Rainer Schmidt, Selmin Nurcan, Sérgio Guerreiro, Qin Ma",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -7804,7 +7804,7 @@
   },
   {
     "Title": "Nine years later: Reflecting on our article",
-    "Author": "Massimiliano De Leoni, Wil M.P. Van Der Aalst, Marcus Dees",
+    "Author": "Massimiliano De Leoni, van der Aalst, Wil M. P., Marcus Dees",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Information Systems",
@@ -7872,7 +7872,7 @@
   },
   {
     "Title": "OC-PM: analyzing object-centric event logs and process models",
-    "Author": "Alessandro Berti, Wil M. P. van der Aalst",
+    "Author": "Alessandro Berti, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "International Journal on Software Tools for Technology Transfer",
@@ -7889,7 +7889,7 @@
   },
   {
     "Title": "OCPQ: Object-Centric Process Querying and Constraints",
-    "Author": "Aaron Küsters, Wil M. P. Van Der Aalst",
+    "Author": "Aaron Küsters, van der Aalst, Wil M. P.",
     "Editor": "Jānis Grabis, Tanja E. J. Vos, Maria José Escalona, Oscar Pastor",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -7906,7 +7906,7 @@
   },
   {
     "Title": "OPerA: Object-Centric Performance Analysis",
-    "Author": "Gyunam Park, Jan Niklas Adams, Wil M. P. van der Aalst",
+    "Author": "Gyunam Park, Jan Niklas Adams, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -7940,7 +7940,7 @@
   },
   {
     "Title": "Object-Centric Process Mining",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "report",
     "PublicationTitle": null,
@@ -7957,7 +7957,7 @@
   },
   {
     "Title": "Object-Centric Process Mining Using Process Cubes",
-    "Author": "Anahita Farhang Ghahfarokhi, Alessandro Berti, Wil M. P. van Der Aalst",
+    "Author": "Anahita Farhang Ghahfarokhi, Alessandro Berti, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "World Academy of Science, Engineering and Technology International Journal of Mechanical and Industrial Engineering",
@@ -7974,7 +7974,7 @@
   },
   {
     "Title": "Object-Centric Process Mining: Dealing with Divergence and Convergence in Event Data",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": "Peter Csaba Ölveczky, Gwen Salaün",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -7991,7 +7991,7 @@
   },
   {
     "Title": "Object-Centric Process Mining: Unraveling the Fabric of Real Processes",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Mathematics",
@@ -8042,7 +8042,7 @@
   },
   {
     "Title": "Object-centric process management: A research manifesto",
-    "Author": "Anjo Seidel, Mathias Weske, Marco Montali, Andrey Rivkin, Manfred Reichert, Jan Martijn E.M. Van Der Werf, Wil M.P. Van Der Aalst, Marius Breitmayer, Lukas Liss, Jan Niklas Van Detten, Amin Jalali, Shahrzad Khayatbashi, Maximilian König, Tom Lichtenstein, Stefanie Rinderle-Ma, Barbara Weber, Pnina Soffer, Lorenzo Rossi, Daniel Calegari Garcia, Andrea Delgado, Remco Dijkman, Sarah Winkler, Matthias Weidlich, Sander J.J. Leemans, Dirk Fahland, Ava Swevels, Monique Snoeck, Giancarlo Guizzardi, Alessandro Gianola, Avigdor Gal, Ekkart Kindler, Irina Lomazova, Barbara Re, Giovanni Meroni, Andrea Morichetta, Alessandro Marcelletti, Sara Pettinari, Boudewijn Van Dongen, Johannes De Smedt, Majid Rafiei, Julius Köpke, Thomas Hildebrandt, Francesca Zerbato, Luise Pufahl, Hajo Reijers, Artem Polyvyanyy, Chiara Di Francescomarino, Fabrizio Maria Maggi, Oscar Pastor, Stephan Haarmann, Henderik Proper, Xixi Lu, Hugo López, Tijs Slaats, Jochen De Weerdt, Massimiliano De Leoni, Niels Martin, Karolin Winter, Nick Van Beest, Orlenys López-Pintado, Sebastiaan Van Zelst, Chiara Ghidini, Arik Senderovich",
+    "Author": "Anjo Seidel, Mathias Weske, Marco Montali, Andrey Rivkin, Manfred Reichert, Jan Martijn E.M. Van Der Werf, van der Aalst, Wil M. P., Marius Breitmayer, Lukas Liss, Jan Niklas Van Detten, Amin Jalali, Shahrzad Khayatbashi, Maximilian König, Tom Lichtenstein, Stefanie Rinderle-Ma, Barbara Weber, Pnina Soffer, Lorenzo Rossi, Daniel Calegari Garcia, Andrea Delgado, Remco Dijkman, Sarah Winkler, Matthias Weidlich, Sander J.J. Leemans, Dirk Fahland, Ava Swevels, Monique Snoeck, Giancarlo Guizzardi, Alessandro Gianola, Avigdor Gal, Ekkart Kindler, Irina Lomazova, Barbara Re, Giovanni Meroni, Andrea Morichetta, Alessandro Marcelletti, Sara Pettinari, Boudewijn Van Dongen, Johannes De Smedt, Majid Rafiei, Julius Köpke, Thomas Hildebrandt, Francesca Zerbato, Luise Pufahl, Hajo Reijers, Artem Polyvyanyy, Chiara Di Francescomarino, Fabrizio Maria Maggi, Oscar Pastor, Stephan Haarmann, Henderik Proper, Xixi Lu, Hugo López, Tijs Slaats, Jochen De Weerdt, Massimiliano De Leoni, Niels Martin, Karolin Winter, Nick Van Beest, Orlenys López-Pintado, Sebastiaan Van Zelst, Chiara Ghidini, Arik Senderovich",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Information Systems",
@@ -8127,7 +8127,7 @@
   },
   {
     "Title": "On the Representational Bias in Process Mining",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -8144,7 +8144,7 @@
   },
   {
     "Title": "On the Role of Fitness, Precision, Generalization and Simplicity in Process Discovery",
-    "Author": "Joos C. A. M. Buijs, Boudewijn F. van Dongen, Wil M. P. van der Aalst",
+    "Author": "Joos C. A. M. Buijs, Boudewijn F. van Dongen, van der Aalst, Wil M. P.",
     "Editor": "Robert Meersman, Hervé Panetto, Tharam Dillon, Stefanie Rinderle-Ma, Peter Dadam, Xiaofang Zhou, Siani Pearson, Alois Ferscha, Sonia Bergamaschi, Isabel F. Cruz",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -8195,7 +8195,7 @@
   },
   {
     "Title": "Online conformance checking: relating event streams to process models using prefix-alignments",
-    "Author": "Sebastiaan J. van Zelst, Alfredo Bolt, Marwan Hassan, Boudewijn F. van Dongen, Wil M. P. van Der Aalst",
+    "Author": "Sebastiaan J. van Zelst, Alfredo Bolt, Marwan Hassan, Boudewijn F. van Dongen, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "International Journal of Data Science and Analytics",
@@ -8263,7 +8263,7 @@
   },
   {
     "Title": "OrdinoR: A framework for discovering, evaluating, and analyzing organizational models using event logs",
-    "Author": "Jing Yang, Chun Ouyang, Wil M. P. van der Aalst, Arthur H. M. ter Hofstede, Yang Yu",
+    "Author": "Jing Yang, Chun Ouyang, van der Aalst, Wil M. P., Arthur H. M. ter Hofstede, Yang Yu",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Decision Support Systems",
@@ -8314,7 +8314,7 @@
   },
   {
     "Title": "PM^2 : A Process Mining Project Methodology",
-    "Author": "Maikel L. van Eck, Xixi Lu, Sander J. J. Leemans, Wil M. P. van der Aalst",
+    "Author": "Maikel L. van Eck, Xixi Lu, Sander J. J. Leemans, van der Aalst, Wil M. P.",
     "Editor": "Paul Johannesson, Marite Kirikova, Jelena Zdravkovic",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -8365,7 +8365,7 @@
   },
   {
     "Title": "PROVED: A Tool for Graph Representation and Analysis of Uncertain Event Data",
-    "Author": "Marco Pegoraro, Merih Seran Uysal, Wil M. P. van der Aalst",
+    "Author": "Marco Pegoraro, Merih Seran Uysal, van der Aalst, Wil M. P.",
     "Editor": "Didier Buchs, Josep Carmona",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -8484,7 +8484,7 @@
   },
   {
     "Title": "Precision and Fitness in Object-Centric Process Mining",
-    "Author": "Jan Niklas Adams, Wil M .P. van der Aalst",
+    "Author": "Jan Niklas Adams, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -8552,7 +8552,7 @@
   },
   {
     "Title": "Predictive Performance Monitoring of Material Handling Systems Using the Performance Spectrum",
-    "Author": "Vadim Denisov, Dirk Fahland, Wil M. P. Van Der Aalst, Josep Carmona, Mieke Jans, Marcello La Rosa",
+    "Author": "Vadim Denisov, Dirk Fahland, van der Aalst, Wil M. P., Josep Carmona, Mieke Jans, Marcello La Rosa",
     "Editor": null,
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -8637,7 +8637,7 @@
   },
   {
     "Title": "Preserving complex object-centric graph structures to improve machine learning tasks in process mining",
-    "Author": "Jan Niklas Adams, Gyunam Park, Wil M. P. Van Der Aalst",
+    "Author": "Jan Niklas Adams, Gyunam Park, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Engineering Applications of Artificial Intelligence",
@@ -8705,7 +8705,7 @@
   },
   {
     "Title": "Privacy-preserving process mining in healthcare",
-    "Author": "Anastasiia Pika, Moe T. Wynn, Stephanus Budiono, Arthur H. M. ter Hofstede, Wil M. P. van der Aalst, Hajo A. Reijers",
+    "Author": "Anastasiia Pika, Moe T. Wynn, Stephanus Budiono, Arthur H. M. ter Hofstede, van der Aalst, Wil M. P., Hajo A. Reijers",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "International Journal of Environmental Research and Public Health",
@@ -8722,7 +8722,7 @@
   },
   {
     "Title": "ProMoAI: Process Modeling with Generative AI",
-    "Author": "Humam Kourani, Alessandro Berti, Daniel Schuster, Wil M. P. van der Aalst",
+    "Author": "Humam Kourani, Alessandro Berti, Daniel Schuster, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -8739,7 +8739,7 @@
   },
   {
     "Title": "Process Comparison Using Object-Centric Process Cubes",
-    "Author": "Anahita Farhang Ghahfarokhi, Alessandro Berti, Wil M. P. van der Aalst",
+    "Author": "Anahita Farhang Ghahfarokhi, Alessandro Berti, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": null,
@@ -8910,7 +8910,7 @@
   {
     "Title": "Process Mining Handbook",
     "Author": null,
-    "Editor": "Wil M. P. van der Aalst, Josep Carmona",
+    "Editor": "van der Aalst, Wil M. P., Josep Carmona",
     "ItemType": "book",
     "PublicationTitle": null,
     "Publisher": "Springer",
@@ -8926,7 +8926,7 @@
   },
   {
     "Title": "Process Mining Manifest",
-    "Author": "Wil M. P. van der Aalst, Arya Adriansyah, Ana Karla Alves de Medeiros, Franco Arcieri, Thomas Baier, Tobias Blickle, Jagadeesh Chandra Bose, Peter van den Brand, Ronald Brandtjen, Joos Buijs, Andrea Burattin, Josep Carmona, Malu Castellanos, Jan Claes, Jonathan Cook, Nicola Costantini, Francisco Curbera, Ernesto Damiani, Massimiliano de Leoni, Pavlos Delias, Boudewijn F. van Dongen, Marlon Dumas, Schahram Dustdar, Dirk Fahland, Diogo R. Ferreira, Walid Gaaloul, Frank van Geffen, Sukriti Goel, Christian Günther, Antonella Guzzo, Paul Harmon, Arthur H. M. ter Hofstede, John Hoogland, Jon Espen Ingvaldsen, Koki Kato, Rudolf Kuhn, Akhil Kumar, Marcello La Rosa, Fabrizio Maggi, Donato Malerba, Ronny S. Mans, Alberto Manuel, Martin McCreesh, Paola Mello, Jan Mendling, Marco Montali, Hamid R. Motahari-Nezhad, Michael zur Muehlen, Jorge Munoz-Gama, Luigi Pontieri, Joel Ribeiro, Anne Rozinat, Hugo Seguel Pérez, Ricardo Seguel Pérez, Marcos Sepúlveda, Jim Sinur, Pnina Soffer, Minseok Song, Alessandro Sperduti, Giovanni Stilo, Casper Stoel, Keith Swenson, Maurizio Talamo, Wei Tan, Chris Turner, Jan Vanthienen, George Varvaressos, Eric Verbeek, Marc Verdonk, Roberto Vigo, Jianmin Wang, Barbara Weber, Matthias Weidlich, Ton Weijters, Lijie Wen, Michael Westergaard, Moe T. Wynn",
+    "Author": "van der Aalst, Wil M. P., Arya Adriansyah, Ana Karla Alves de Medeiros, Franco Arcieri, Thomas Baier, Tobias Blickle, Jagadeesh Chandra Bose, Peter van den Brand, Ronald Brandtjen, Joos Buijs, Andrea Burattin, Josep Carmona, Malu Castellanos, Jan Claes, Jonathan Cook, Nicola Costantini, Francisco Curbera, Ernesto Damiani, Massimiliano de Leoni, Pavlos Delias, Boudewijn F. van Dongen, Marlon Dumas, Schahram Dustdar, Dirk Fahland, Diogo R. Ferreira, Walid Gaaloul, Frank van Geffen, Sukriti Goel, Christian Günther, Antonella Guzzo, Paul Harmon, Arthur H. M. ter Hofstede, John Hoogland, Jon Espen Ingvaldsen, Koki Kato, Rudolf Kuhn, Akhil Kumar, Marcello La Rosa, Fabrizio Maggi, Donato Malerba, Ronny S. Mans, Alberto Manuel, Martin McCreesh, Paola Mello, Jan Mendling, Marco Montali, Hamid R. Motahari-Nezhad, Michael zur Muehlen, Jorge Munoz-Gama, Luigi Pontieri, Joel Ribeiro, Anne Rozinat, Hugo Seguel Pérez, Ricardo Seguel Pérez, Marcos Sepúlveda, Jim Sinur, Pnina Soffer, Minseok Song, Alessandro Sperduti, Giovanni Stilo, Casper Stoel, Keith Swenson, Maurizio Talamo, Wei Tan, Chris Turner, Jan Vanthienen, George Varvaressos, Eric Verbeek, Marc Verdonk, Roberto Vigo, Jianmin Wang, Barbara Weber, Matthias Weidlich, Ton Weijters, Lijie Wen, Michael Westergaard, Moe T. Wynn",
     "Editor": null,
     "ItemType": "document",
     "PublicationTitle": null,
@@ -8943,7 +8943,7 @@
   },
   {
     "Title": "Process Mining Manifesto",
-    "Author": "Wil M. P. van der Aalst, Arya Adriansyah, Ana Karla Alves de Medeiros, Franco Arcieri, Thomas Baier, Tobias Blickle, Jagadeesh Chandra Bose, Peter van den Brand, Ronald Brandtjen, Joos Buijs, Andrea Burattin, Josep Carmona, Malu Castellanos, Jan Claes, Jonathan Cook, Nicola Costantini, Francisco Curbera, Ernesto Damiani, Massimiliano de Leoni, Pavlos Delias, Boudewijn F. van Dongen, Marlon Dumas, Schahram Dustdar, Dirk Fahland, Diogo R. Ferreira, Walid Gaaloul, Frank van Geffen, Sukriti Goel, Christian Günther, Antonella Guzzo, Paul Harmon, Arthur H. M. ter Hofstede, John Hoogland, Jon Espen Ingvaldsen, Koki Kato, Rudolf Kuhn, Akhil Kumar, Marcello La Rosa, Fabrizio Maggi, Donato Malerba, Ronny S. Mans, Alberto Manuel, Martin McCreesh, Paola Mello, Jan Mendling, Marco Montali, Hamid R. Motahari-Nezhad, Michael zur Muehlen, Jorge Munoz-Gama, Luigi Pontieri, Joel Ribeiro, Anne Rozinat, Hugo Seguel Pérez, Ricardo Seguel Pérez, Marcos Sepúlveda, Jim Sinur, Pnina Soffer, Minseok Song, Alessandro Sperduti, Giovanni Stilo, Casper Stoel, Keith Swenson, Maurizio Talamo, Wei Tan, Chris Turner, Jan Vanthienen, George Varvaressos, Eric Verbeek, Marc Verdonk, Roberto Vigo, Jianmin Wang, Barbara Weber, Matthias Weidlich, Ton Weijters, Lijie Wen, Michael Westergaard, Moe T. Wynn",
+    "Author": "van der Aalst, Wil M. P., Arya Adriansyah, Ana Karla Alves de Medeiros, Franco Arcieri, Thomas Baier, Tobias Blickle, Jagadeesh Chandra Bose, Peter van den Brand, Ronald Brandtjen, Joos Buijs, Andrea Burattin, Josep Carmona, Malu Castellanos, Jan Claes, Jonathan Cook, Nicola Costantini, Francisco Curbera, Ernesto Damiani, Massimiliano de Leoni, Pavlos Delias, Boudewijn F. van Dongen, Marlon Dumas, Schahram Dustdar, Dirk Fahland, Diogo R. Ferreira, Walid Gaaloul, Frank van Geffen, Sukriti Goel, Christian Günther, Antonella Guzzo, Paul Harmon, Arthur H. M. ter Hofstede, John Hoogland, Jon Espen Ingvaldsen, Koki Kato, Rudolf Kuhn, Akhil Kumar, Marcello La Rosa, Fabrizio Maggi, Donato Malerba, Ronny S. Mans, Alberto Manuel, Martin McCreesh, Paola Mello, Jan Mendling, Marco Montali, Hamid R. Motahari-Nezhad, Michael zur Muehlen, Jorge Munoz-Gama, Luigi Pontieri, Joel Ribeiro, Anne Rozinat, Hugo Seguel Pérez, Ricardo Seguel Pérez, Marcos Sepúlveda, Jim Sinur, Pnina Soffer, Minseok Song, Alessandro Sperduti, Giovanni Stilo, Casper Stoel, Keith Swenson, Maurizio Talamo, Wei Tan, Chris Turner, Jan Vanthienen, George Varvaressos, Eric Verbeek, Marc Verdonk, Roberto Vigo, Jianmin Wang, Barbara Weber, Matthias Weidlich, Ton Weijters, Lijie Wen, Michael Westergaard, Moe T. Wynn",
     "Editor": "Florian Daniel, Kamel Barkaoui, Schahram Dustdar",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -9080,7 +9080,7 @@
   {
     "Title": "Process Mining and Robotic Process Automation: A Perfect Match",
     "Author": "Jerome Geyer-Klingeberg, Janina Nakladal, Fabian Baldauf, Fabian Veit",
-    "Editor": "Wil M. P. Van Der Aalst, Fabio Casati, Raffaele Conforti, Massimiliano de Leoni, Marlon Dumas, Akhil Kumar, Jan Mendling, Surya Nepal, Brian Pentland, Barbara Weber",
+    "Editor": "van der Aalst, Wil M. P., Fabio Casati, Raffaele Conforti, Massimiliano de Leoni, Marlon Dumas, Akhil Kumar, Jan Mendling, Surya Nepal, Brian Pentland, Barbara Weber",
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
     "Publisher": "CEUR-WS",
@@ -9096,7 +9096,7 @@
   },
   {
     "Title": "Process Mining and Simulation: A Match Made in Heaven!",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": "Victor Chan, Andrea D'Ambrogio, Gregory Zacharewicz, Navonil Mustafee",
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -9181,7 +9181,7 @@
   },
   {
     "Title": "Process Mining for Healthcare: Characteristics and Challenges",
-    "Author": "Jorge Munoz-Gama, Niels Martin, Carlos Fernandez-Llatas, Owen A. Johnson, Marcos Sepúlveda, Emmanuel Helm, Victor Galvez-Yanjari, Eric Rojas, Antonio Martinez-Millana, Davide Aloini, Ilaria Angela Amantea, Robert Andrews, Michael Arias, Iris Beerepoot, Elisabetta Benevento, Andrea Burattin, Daniel Capurro, Josep Carmona, Marco Comuzzi, Benjamin Dalmas, Rene de la Fuente, Chiara Di Francescomarino, Claudio Di Ciccio, Roberto Gatta, Chiara Ghidini, Fernanda Gonzalez-Lopez, Gema Ibanez-Sanchez, Hilda B. Klasky, Angelina Prima Kurniati, Xixi Lu, Felix Mannhardt, Ronny Mans, Mar Marcos, Renata Medeiros de Carvalho, Marco Pegoraro, Simon K. Poon, Luise Pufahl, Hajo A. Reijers, Simon Remy, Stefanie Rinderle-Ma, Lucia Sacchi, Fernando Seoane, Minseok Song, Alessandro Stefanini, Emilio Sulis, Arthur H. M. ter Hofstede, Pieter J. Toussaint, Vicente Traver, Zoe Valero-Ramon, Inge van de Weerd, Wil M. P. van der Aalst, Rob Vanwersch, Mathias Weske, Moe Thandar Wynn, Francesca Zerbato",
+    "Author": "Jorge Munoz-Gama, Niels Martin, Carlos Fernandez-Llatas, Owen A. Johnson, Marcos Sepúlveda, Emmanuel Helm, Victor Galvez-Yanjari, Eric Rojas, Antonio Martinez-Millana, Davide Aloini, Ilaria Angela Amantea, Robert Andrews, Michael Arias, Iris Beerepoot, Elisabetta Benevento, Andrea Burattin, Daniel Capurro, Josep Carmona, Marco Comuzzi, Benjamin Dalmas, Rene de la Fuente, Chiara Di Francescomarino, Claudio Di Ciccio, Roberto Gatta, Chiara Ghidini, Fernanda Gonzalez-Lopez, Gema Ibanez-Sanchez, Hilda B. Klasky, Angelina Prima Kurniati, Xixi Lu, Felix Mannhardt, Ronny Mans, Mar Marcos, Renata Medeiros de Carvalho, Marco Pegoraro, Simon K. Poon, Luise Pufahl, Hajo A. Reijers, Simon Remy, Stefanie Rinderle-Ma, Lucia Sacchi, Fernando Seoane, Minseok Song, Alessandro Stefanini, Emilio Sulis, Arthur H. M. ter Hofstede, Pieter J. Toussaint, Vicente Traver, Zoe Valero-Ramon, Inge van de Weerd, van der Aalst, Wil M. P., Rob Vanwersch, Mathias Weske, Moe Thandar Wynn, Francesca Zerbato",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Journal of Biomedical Informatics",
@@ -9249,7 +9249,7 @@
   },
   {
     "Title": "Process Mining for Python (PM4Py): Bridging the Gap Between Process- and Data Science",
-    "Author": "Andrea Burattin, Alessandro Berti, Sebastiaan J. van Zelst, Wil M. P. van Der Aalst",
+    "Author": "Andrea Burattin, Alessandro Berti, Sebastiaan J. van Zelst, van der Aalst, Wil M. P.",
     "Editor": "Artem Polyvyanyy, Sebastiaan J. van Zelst",
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -9317,7 +9317,7 @@
   },
   {
     "Title": "Process Mining in Healthcare: Evaluating and Exploiting Operational Healthcare Processes",
-    "Author": "Ronny S. Mans, Wil M. P. van der Aalst, Rob J. B. Vanwersch",
+    "Author": "Ronny S. Mans, van der Aalst, Wil M. P., Rob J. B. Vanwersch",
     "Editor": null,
     "ItemType": "book",
     "PublicationTitle": null,
@@ -9419,7 +9419,7 @@
   },
   {
     "Title": "Process Mining in the Large: A Tutorial",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": "Esteban Zimányi",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -9436,7 +9436,7 @@
   },
   {
     "Title": "Process Mining on Blockchain Data: A Case Study of Augur",
-    "Author": "Richard Hobeck, Christopher Klinkmüller, H. M. N. Dilum Bandara, Ingo Weber, Wil M. P. van der Aalst",
+    "Author": "Richard Hobeck, Christopher Klinkmüller, H. M. N. Dilum Bandara, Ingo Weber, van der Aalst, Wil M. P.",
     "Editor": "Artem Polyvyanyy, Moe Thandar Wynn, Amy Van Looy, Manfred Reichert",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -9453,7 +9453,7 @@
   },
   {
     "Title": "Process Mining on Databases: Unearthing Historical Data from Redo Logs",
-    "Author": "Eduardo González López de Murillas, Wil M. P. van der Aalst, Hajo A. Reijers",
+    "Author": "Eduardo González López de Murillas, van der Aalst, Wil M. P., Hajo A. Reijers",
     "Editor": "Hamid Reza Motahari-Nezhad, Jan Recker, Matthias Weidlich",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -9538,7 +9538,7 @@
   },
   {
     "Title": "Process Mining: Data Science in Action",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "book",
     "PublicationTitle": null,
@@ -9555,7 +9555,7 @@
   },
   {
     "Title": "Process Mining: Discovering Workflow Models from Event-Based Data",
-    "Author": "Ton Weijters, Wil M. P. van der Aalst",
+    "Author": "Ton Weijters, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -9572,7 +9572,7 @@
   },
   {
     "Title": "Process Mining: Discovery, Conformance and Enhancement of Business Processes",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "book",
     "PublicationTitle": null,
@@ -9590,7 +9590,7 @@
   {
     "Title": "Process Mining: Overview and Outlook of Petri Net Discovery Algorithms",
     "Author": "B. F. van Dongen, A. K. Alves de Medeiros, L. Wen",
-    "Editor": "Kurt Jensen, Wil M. P. van der Aalst",
+    "Editor": "Kurt Jensen, van der Aalst, Wil M. P.",
     "ItemType": "bookSection",
     "PublicationTitle": null,
     "Publisher": "Springer",
@@ -9657,7 +9657,7 @@
   },
   {
     "Title": "Process Modeling With Large Language Models",
-    "Author": "Humam Kourani, Alessandro Berti, Daniel Schuster, Wil M. P. van der Aalst",
+    "Author": "Humam Kourani, Alessandro Berti, Daniel Schuster, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -9742,7 +9742,7 @@
   },
   {
     "Title": "Process mining beyond workflows",
-    "Author": "Wil M .P. van der Aalst, Hajo A. Reijers, Laura Maruster",
+    "Author": "van der Aalst, Wil M. P., Hajo A. Reijers, Laura Maruster",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Computers in Industry",
@@ -9759,7 +9759,7 @@
   },
   {
     "Title": "Process mining can be applied to software too!",
-    "Author": "Vladimir A. Rubin, Alexey A. Mitsyuk, Irina A. Lomazova, Wil M. P. van der Aalst",
+    "Author": "Vladimir A. Rubin, Alexey A. Mitsyuk, Irina A. Lomazova, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -9878,7 +9878,7 @@
   },
   {
     "Title": "Process mining using BPMN: relating event logs and process models",
-    "Author": "Anna A. Kalenkova, Wil M. P. van der Aalst, Irina A. Lomazova, Vladimir A. Rubin",
+    "Author": "Anna A. Kalenkova, van der Aalst, Wil M. P., Irina A. Lomazova, Vladimir A. Rubin",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Software & Systems Modeling",
@@ -9912,7 +9912,7 @@
   },
   {
     "Title": "Process science: the interdisciplinary study of socio-technical change",
-    "Author": "Jan Vom Brocke, Wil M. P. Van Der Aalst, Nicholas Berente, Boudewijn Van Dongen, Thomas Grisold, Waldemar Kremser, Jan Mendling, Brian T. Pentland, Maximilian Roeglinger, Michael Rosemann, Barbara Weber",
+    "Author": "Jan Vom Brocke, van der Aalst, Wil M. P., Nicholas Berente, Boudewijn Van Dongen, Thomas Grisold, Waldemar Kremser, Jan Mendling, Brian T. Pentland, Maximilian Roeglinger, Michael Rosemann, Barbara Weber",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Process Science",
@@ -10150,7 +10150,7 @@
   },
   {
     "Title": "Quantifying Temporal Privacy Leakage in Continuous Event Data Publishing",
-    "Author": "Majid Rafiei, Gamal Elkoumy, Wil M. P. van der Aalst",
+    "Author": "Majid Rafiei, Gamal Elkoumy, van der Aalst, Wil M. P.",
     "Editor": "Mohamed Sellami, Paolo Ceravolo, Hajo A. Reijers, Walid Gaaloul, Hervé Panetto",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -10201,7 +10201,7 @@
   },
   {
     "Title": "ReThink Your Processes! A Review of Process Mining for Sustainability",
-    "Author": "Nina Graves, István Koren, Wil M. P. van Der Aalst",
+    "Author": "Nina Graves, István Koren, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -10235,7 +10235,7 @@
   },
   {
     "Title": "Recomposing conformance: Closing the circle on decomposed alignment-based conformance checking in process mining",
-    "Author": "Wai Lam Jonathan Lee, H.M.W. Verbeek, Jorge Munoz-Gama, Wil M. P. van der Aalst, Marcos Sepúlveda",
+    "Author": "Wai Lam Jonathan Lee, H.M.W. Verbeek, Jorge Munoz-Gama, van der Aalst, Wil M. P., Marcos Sepúlveda",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Information Sciences",
@@ -10252,7 +10252,7 @@
   },
   {
     "Title": "Remaining Time Prediction for Processes with Inter-Case Dynamics (Preprints and early-stage research may not have been peer reviewed yet)",
-    "Author": "Mahsa Pourbafrani, Shreya Kar, Sebastian Kaiser, Wil M. P. van der Aalst",
+    "Author": "Mahsa Pourbafrani, Shreya Kar, Sebastian Kaiser, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Researchgate",
@@ -10269,7 +10269,7 @@
   },
   {
     "Title": "Removing Operational Friction Using Process Mining: Challenges Provided by the Internet of Production (IoP)",
-    "Author": "Wil M. P. van der Aalst, Tobias Brockhoff, Anahita Farhang Ghahfarokhi, Mahsa Pourbafrani, Merih Seran Uysal, Sebastiaan J. van Zelst",
+    "Author": "van der Aalst, Wil M. P., Tobias Brockhoff, Anahita Farhang Ghahfarokhi, Mahsa Pourbafrani, Merih Seran Uysal, Sebastiaan J. van Zelst",
     "Editor": "Slimane Hammoudi, Christoph Quix, Jorge Bernardino",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -10286,7 +10286,7 @@
   },
   {
     "Title": "Replaying history on process models for conformance checking and performance analysis",
-    "Author": "Wil M. P. van der Aalst, Arya Adriansyah, Boudewijn F. van Dongen",
+    "Author": "van der Aalst, Wil M. P., Arya Adriansyah, Boudewijn F. van Dongen",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery",
@@ -10337,7 +10337,7 @@
   },
   {
     "Title": "Resilient Digital Twin",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "blogPost",
     "PublicationTitle": null,
@@ -10354,7 +10354,7 @@
   },
   {
     "Title": "Resilient Digital Twins: Organizations Need to Prepare for the Unexpected",
-    "Author": "Wil M. P. van der Aalst, Oliver Hinz, Christof Weinhardt",
+    "Author": "van der Aalst, Wil M. P., Oliver Hinz, Christof Weinhardt",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Business & Information Systems Engineering",
@@ -10388,7 +10388,7 @@
   },
   {
     "Title": "Rethinking the Input for Process Mining: Insights from the XES Survey and Workshop",
-    "Author": "Moe Thandar Wynn, Julian Lebherz, Wil M. P. van der Aalst, Rafael Accorsi, Claudio Di Ciccio, Lakmali Jayarathna, H.M.W. Verbeek",
+    "Author": "Moe Thandar Wynn, Julian Lebherz, van der Aalst, Wil M. P., Rafael Accorsi, Claudio Di Ciccio, Lakmali Jayarathna, H.M.W. Verbeek",
     "Editor": null,
     "ItemType": "report",
     "PublicationTitle": null,
@@ -10405,7 +10405,7 @@
   },
   {
     "Title": "Revealing Inherent Concurrency in Event Data: A Partial Order Approach to Process Discovery",
-    "Author": "Humam Kourani, Gyunam Park, Wil M. P. van der Aalst",
+    "Author": "Humam Kourani, Gyunam Park, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -10456,7 +10456,7 @@
   },
   {
     "Title": "Robotic Process Automation",
-    "Author": "Wil M. P. van der Aalst, Martin Bichler, Armin Heinzl",
+    "Author": "van der Aalst, Wil M. P., Martin Bichler, Armin Heinzl",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Business & Information Systems Engineering",
@@ -10524,7 +10524,7 @@
   },
   {
     "Title": "Rule-guided process discovery",
-    "Author": "Ali Norouzifar, Marcus Dees, Wil Van Der Aalst",
+    "Author": "Ali Norouzifar, Marcus Dees, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Data & Knowledge Engineering",
@@ -10575,7 +10575,7 @@
   },
   {
     "Title": "Scalable process discovery and conformance checking",
-    "Author": "Sander J. J. Leemans, Dirk Fahland, Wil M. P. van der Aalst",
+    "Author": "Sander J. J. Leemans, Dirk Fahland, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Software & Systems Modeling",
@@ -10609,7 +10609,7 @@
   },
   {
     "Title": "Scientific workflows for process mining: building blocks, scenarios, and implementation",
-    "Author": "Alfredo Bolt, Massimiliano de Leoni, Wil M. P. van der Aalst",
+    "Author": "Alfredo Bolt, Massimiliano de Leoni, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "International Journal on Software Tools for Technology Transfer",
@@ -10677,7 +10677,7 @@
   },
   {
     "Title": "Service mining: Using process mining to discover, check, and improve service behavior",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "IEEE Transactions on Services Computing",
@@ -10728,7 +10728,7 @@
   },
   {
     "Title": "Six Levels of Autonomous Process Execution Management (APEM)",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "arXiv:2204.11328 [cs]",
@@ -10813,7 +10813,7 @@
   },
   {
     "Title": "Spreadsheets for business process management: Using process mining to deal with “events” rather than “numbers”?",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Business Process Management Journal",
@@ -10864,7 +10864,7 @@
   },
   {
     "Title": "Stochastic process mining: Earth movers’ stochastic conformance",
-    "Author": "Sander J.J. Leemans, Wil M. P. van der Aalst, Tobias Brockhoff, Artem Polyvyanyy",
+    "Author": "Sander J.J. Leemans, van der Aalst, Wil M. P., Tobias Brockhoff, Artem Polyvyanyy",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Information Systems",
@@ -10915,7 +10915,7 @@
   },
   {
     "Title": "Supporting Automatic System Dynamics Model Generation for Simulation in the Context of Process Mining",
-    "Author": "Mahsa Pourbafrani, Sebastiaan J. van Zelst, Wil M. P. van der Aalst",
+    "Author": "Mahsa Pourbafrani, Sebastiaan J. van Zelst, van der Aalst, Wil M. P.",
     "Editor": "Witold Abramowicz, Gary Klein",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -10949,7 +10949,7 @@
   },
   {
     "Title": "Supporting Process Mining by Showing Events at a Glance",
-    "Author": "Wil M. P. van der Aalst, Minseok Song",
+    "Author": "van der Aalst, Wil M. P., Minseok Song",
     "Editor": null,
     "ItemType": "conferencePaper",
     "PublicationTitle": null,
@@ -10966,7 +10966,7 @@
   },
   {
     "Title": "Sustainable Systems Engineering: Opportunities and Challenges",
-    "Author": "Wil M. P. van der Aalst, Oliver Hinz, Christof Weinhardt",
+    "Author": "van der Aalst, Wil M. P., Oliver Hinz, Christof Weinhardt",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Business & Information Systems Engineering",
@@ -11034,7 +11034,7 @@
   },
   {
     "Title": "TLKC-Privacy Model for Process Mining",
-    "Author": "Majid Rafiei, Miriam Wagner, Wil M. P. van der Aalst",
+    "Author": "Majid Rafiei, Miriam Wagner, van der Aalst, Wil M. P.",
     "Editor": "Fabiano Dalpiaz, Jelena Zdravkovic, Pericles Loucopoulos",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -11068,7 +11068,7 @@
   },
   {
     "Title": "Text-Aware Predictive Monitoring of Business Processes",
-    "Author": "Marco Pegoraro, Merih Seran Uysal, David Benedikt Georgi, Wil M. P. van der Aalst",
+    "Author": "Marco Pegoraro, Merih Seran Uysal, David Benedikt Georgi, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "arXiv:2104.09962 [cs.AI]",
@@ -11238,7 +11238,7 @@
   },
   {
     "Title": "The Imprecisions of Precision Measures in Process Mining",
-    "Author": "Niek Tax, Xixi Lu, Natalia Sidorova, Dirk Fahland, Wil M. P. van der Aalst",
+    "Author": "Niek Tax, Xixi Lu, Natalia Sidorova, Dirk Fahland, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Information Processing Letters",
@@ -11425,7 +11425,7 @@
   },
   {
     "Title": "The impact of biased sampling of event logs on the performance of process discovery",
-    "Author": "Mohammadreza Fani Sani, Sebastiaan J. van Zelst, Wil M. P. van der Aalst",
+    "Author": "Mohammadreza Fani Sani, Sebastiaan J. van Zelst, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Computing",
@@ -11544,7 +11544,7 @@
   },
   {
     "Title": "Time prediction based on process mining",
-    "Author": "Wil M. P. van der Aalst, M.H. Schonenberg, M. Song",
+    "Author": "van der Aalst, Wil M. P., M.H. Schonenberg, M. Song",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Information Systems",
@@ -11595,7 +11595,7 @@
   },
   {
     "Title": "Towards Privacy-Preserving Process Mining in Healthcare",
-    "Author": "Anastasiia Pika, Moe T. Wynn, Stephanus Budiono, Arthur H. M. ter Hofstede, Wil M. P. van der Aalst, Hajo A. Reijers",
+    "Author": "Anastasiia Pika, Moe T. Wynn, Stephanus Budiono, Arthur H. M. ter Hofstede, van der Aalst, Wil M. P., Hajo A. Reijers",
     "Editor": "J. Environ",
     "ItemType": "journalArticle",
     "PublicationTitle": "Public Health 2020",
@@ -11612,7 +11612,7 @@
   },
   {
     "Title": "Towards Quantifying Privacy in Process Mining",
-    "Author": "Majid Rafiei, Wil M. P. van der Aalst",
+    "Author": "Majid Rafiei, van der Aalst, Wil M. P.",
     "Editor": "Sander Leemans, Henrik Leopold",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -11646,7 +11646,7 @@
   },
   {
     "Title": "Towards a Simple and Extensible Standard for Object-Centric Event Data (OCED) -- Core Model, Design Space, and Lessons Learned",
-    "Author": "Dirk Fahland, Marco Montali, Julian Lebherz, Wil M. P. van der Aalst, Maarten van Asseldonk, Peter Blank, Lien Bosmans, Marcus Brenscheidt, Claudio di Ciccio, Andrea Delgado, Daniel Calegari, Jari Peeperkorn, Eric Verbeek, Lotte Vugs, Moe Thandar Wynn",
+    "Author": "Dirk Fahland, Marco Montali, Julian Lebherz, van der Aalst, Wil M. P., Maarten van Asseldonk, Peter Blank, Lien Bosmans, Marcus Brenscheidt, Claudio di Ciccio, Andrea Delgado, Daniel Calegari, Jari Peeperkorn, Eric Verbeek, Lotte Vugs, Moe Thandar Wynn",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -11680,7 +11680,7 @@
   },
   {
     "Title": "Trace Alignment in Process Mining: Opportunities for Process Diagnostics",
-    "Author": "R. P. Jagadeesh Chandra Bose, Wil M. P. van der Aalst",
+    "Author": "R. P. Jagadeesh Chandra Bose, van der Aalst, Wil M. P.",
     "Editor": "Richard Hull, Jan Mendling, Stefan Tai",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -11697,7 +11697,7 @@
   },
   {
     "Title": "Trace Clustering in Process Mining",
-    "Author": "Minseok Song, Christian W. Günther, Wil M. P. van der Aalst",
+    "Author": "Minseok Song, Christian W. Günther, van der Aalst, Wil M. P.",
     "Editor": "Danilo Ardagna, Massimo Mecella, Jian Yang",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -11867,7 +11867,7 @@
   },
   {
     "Title": "Uncertain Case Identifiers in Process Mining: A User Study of the Event-Case Correlation Problem on Click Data",
-    "Author": "Marco Pegoraro, Merih Seran Uysal, Tom-Hendrik Hülsmann, Wil M. P. van der Aalst",
+    "Author": "Marco Pegoraro, Merih Seran Uysal, Tom-Hendrik Hülsmann, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "arXiv:2204.04164 [cs]",
@@ -12071,7 +12071,7 @@
   },
   {
     "Title": "Using Process Mining to Generate Accurate and Interactive Business Process Maps",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": "Witold Abramowicz, Dominik Flejter",
     "ItemType": "bookSection",
     "PublicationTitle": null,
@@ -12139,7 +12139,7 @@
   },
   {
     "Title": "Utilizing domain knowledge in data-driven process discovery: A literature review",
-    "Author": "Daniel Schuster, Sebastiaan J. van Zelst, Wil M. P. van der Aalst",
+    "Author": "Daniel Schuster, Sebastiaan J. van Zelst, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Computers in Industry",
@@ -12445,7 +12445,7 @@
   },
   {
     "Title": "What spreadsheets are to numbers, process mining is to events",
-    "Author": "Wil M. P. van der Aalst, Matthias Weidlich",
+    "Author": "van der Aalst, Wil M. P., Matthias Weidlich",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Informatik-Spektrum",
@@ -12496,7 +12496,7 @@
   },
   {
     "Title": "Why Process Mining Is the Top Skill To Learn in 2022",
-    "Author": "Wil M. P. van der Aalst",
+    "Author": "van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "blogPost",
     "PublicationTitle": null,
@@ -12547,7 +12547,7 @@
   },
   {
     "Title": "Workflow mining: discovering process models from event logs",
-    "Author": "Wil M. P. van der Aalst, T. Weijters, L. Maruster",
+    "Author": "van der Aalst, Wil M. P., T. Weijters, L. Maruster",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "IEEE Transactions on Knowledge and Data Engineering",
@@ -12598,7 +12598,7 @@
   },
   {
     "Title": "eST^2 Miner - Process Discovery Based on Firing Partial Orders",
-    "Author": "Sabine Folz-Weinstein, Christian Rennert, Lisa Luise Mannel, Robin Bergenthum, Wil van der Aalst",
+    "Author": "Sabine Folz-Weinstein, Christian Rennert, Lisa Luise Mannel, Robin Bergenthum, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "preprint",
     "PublicationTitle": null,
@@ -12615,7 +12615,7 @@
   },
   {
     "Title": "ocpa: A Python library for object-centric process analysis",
-    "Author": "Jan Niklas Adams, Gyunam Park, Wil M. P. van Der Aalst",
+    "Author": "Jan Niklas Adams, Gyunam Park, van der Aalst, Wil M. P.",
     "Editor": null,
     "ItemType": "journalArticle",
     "PublicationTitle": "Software Impacts",
