@@ -2839,6 +2839,23 @@
     "ConferenceName": null
   },
   {
+    "Title": "Combining value stream mapping and process mining in production: a systematic literature review",
+    "Author": "Tim Teriete, Klaus Erlach, Thomas Bauernhansl, Wil M. P. Van Der Aalst",
+    "Editor": null,
+    "ItemType": "journalArticle",
+    "PublicationTitle": "Discover Applied Sciences",
+    "Publisher": null,
+    "PublicationYear": 2026.0,
+    "Pages": "285",
+    "Language": "en",
+    "ManualTags": "Manufacturing; Business Process Management; Event Data / Event Log; Data Mining; Literature Review",
+    "AbstractNote": "Abstract\n            Value stream mapping is a widely used and proven method in lean production for gaining transparency into the current state of a production process. To reduce the inefficiency of manually mapping increasingly complex production systems, the growing availability of digital shop floor data offers the potential to digitalize and automate value stream mapping. Approaches based on process mining are considered particularly promising. Therefore, this review article aims to identify, compare, and synthesize existing approaches that combine value stream mapping and process mining in production based on a systematic literature review according to PRISMA 2020. The review includes 21 out of 2682 initially identified records. They are analyzed regarding their metadata, content, and process mining-specific data items. The results are discussed in terms of research gaps and future research directions. While the reviewed approaches offer valuable practical benefits, especially for in-depth analyses, most records present just concepts or case studies without systematic tool support. Further research on novel process mining techniques dedicated to value stream mapping is needed for true integration of value stream mapping and process mining. This review contributes to this effort by identifying open research gaps and suggesting four future research directions. (c) by authors",
+    "Url": "https://link.springer.com/10.1007/s42452-026-08446-y",
+    "DateAdded": "2026-02-21",
+    "Medium": null,
+    "ConferenceName": null
+  },
+  {
     "Title": "Common Data Environment",
     "Author": "Cornelius Preidel, André Borrmann, Hannah Mattern, Markus König, Sven-Eric Schapke",
     "Editor": null,
