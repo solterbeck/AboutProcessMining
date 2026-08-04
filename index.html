@@ -2,140 +2,452 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover comprehensive knowledge and resources about Process Mining">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Discover comprehensive knowledge and resources about Process Intelligence, Process Mining, Business Process Management, Digital Twins and Industry 4.0"
+    >
+
     <title>Home - All About Process Intelligence</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
+
 <body>
+
     <!-- Responsive Header -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark" role="navigation" aria-label="Main Navigation">
+        <nav
+            class="navbar navbar-expand-lg navbar-dark"
+            role="navigation"
+            aria-label="Main Navigation"
+        >
             <div class="container-fluid">
+
                 <!-- Logo and Brand -->
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="logo-placeholder.png" alt="Logo of the Website 'All About Process Mining'">
+                <a
+                    class="navbar-brand d-flex align-items-center"
+                    href="index.html"
+                >
+                    <img
+                        src="logo-placeholder.png"
+                        alt="Logo of All About Process Intelligence"
+                    >
+
                     <span>All About Process Intelligence</span>
                 </a>
+
                 <!-- Hamburger Menu -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <!-- Collapsible Links -->
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <div
+                    class="collapse navbar-collapse justify-content-end"
+                    id="navbarNav"
+                >
                     <ul class="navbar-nav">
+
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="index.html"
+                            >
+                                Home
+                            </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="bibliography.html">Bibliography</a>
+                            <a
+                                class="nav-link"
+                                href="bibliography.html"
+                            >
+                                Bibliography
+                            </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="imprint.html">About & Imprint</a>
+                            <a
+                                class="nav-link"
+                                href="imprint.html"
+                            >
+                                About &amp; Imprint
+                            </a>
                         </li>
+
                     </ul>
                 </div>
+
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- <section class="banner" role="banner" aria-labelledby="banner-title" aria-describedby="banner-description">
-            <div class="banner-text">
-                <h1 id="banner-title">Mine the relevant Knowledge about Process Intelligence</h1>
-                <p id="banner-description">Curated by Sven Solterbeck</p>
-            </div>
-        </section> -->
 
-        <section id="new-publications" class="container mt-5">
-            <h1 class="text-primary">Recently Added Publications</h1>
-            <div id="noItemsMessage" class="text-center text-muted d-none" role="alert">
-                <p>No new publications have been added in the last 30 days.</p>
+        <!-- Responsive Banner -->
+        <section
+            class="hero-section"
+            aria-labelledby="hero-title"
+        >
+            <h1 id="hero-title" class="visually-hidden">
+                Everything you need to know about Process Intelligence
+            </h1>
+
+            <div class="hero-card">
+
+                <img
+                    src="banner-image.png"
+                    class="hero-image"
+                    alt="All About Process Intelligence bibliography with more than 700 publications about Process Intelligence, Process Mining, Business Process Management, Digital Twins and Industry 4.0"
+                    width="2048"
+                    height="768"
+                    loading="eager"
+                    fetchpriority="high"
+                >
+
             </div>
-            <div class="accordion" id="accordionNewPublications" role="region" aria-label="New Publications">
+        </section>
+
+        <!-- Recently Added Publications -->
+        <section
+            id="new-publications"
+            class="container"
+            aria-labelledby="new-publications-title"
+        >
+            <h2
+                id="new-publications-title"
+                class="text-primary"
+            >
+                Recently Added Publications
+            </h2>
+
+            <div
+                id="noItemsMessage"
+                class="text-center text-muted d-none"
+                role="status"
+            >
+                <p>
+                    No new publications have been added in the last 30 days.
+                </p>
+            </div>
+
+            <div
+                class="accordion"
+                id="accordionNewPublications"
+                role="region"
+                aria-label="New Publications"
+            >
                 <!-- Dynamic content will be rendered here -->
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
     <footer class="footer bg-dark text-light py-3">
         <div class="container text-center">
-            <p>&copy; 2025-2026 All About Process Intelligence | Design by Sven Solterbeck</p>
+            <p class="mb-0">
+                &copy; 2025-2026 All About Process Intelligence |
+                Design by Sven Solterbeck
+            </p>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
     <script>
-        // Helper function for fallbacks
+        /**
+         * Returns the supplied value or a fallback text.
+         */
         function getOrFallback(value, fallback = 'N/A') {
-            return value || fallback;
+            if (
+                value === null ||
+                value === undefined ||
+                String(value).trim() === ''
+            ) {
+                return fallback;
+            }
+
+            return value;
+        }
+
+        /**
+         * Escapes text before inserting it into generated HTML.
+         */
+        function escapeHtml(value) {
+            return String(value ?? '')
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;')
+                .replaceAll('"', '&quot;')
+                .replaceAll("'", '&#039;');
+        }
+
+        /**
+         * Validates external links before rendering them.
+         */
+        function getSafeUrl(value) {
+            if (!value) {
+                return null;
+            }
+
+            try {
+                const url = new URL(value);
+
+                if (
+                    url.protocol === 'https:' ||
+                    url.protocol === 'http:'
+                ) {
+                    return url.href;
+                }
+            } catch (error) {
+                return null;
+            }
+
+            return null;
         }
 
         async function loadNewPublications() {
+            const accordion = document.getElementById(
+                'accordionNewPublications'
+            );
+
+            const noItemsMessage = document.getElementById(
+                'noItemsMessage'
+            );
+
             try {
-                const response = await fetch('https://solterbeck.github.io/AboutProcessMining/library_full_data.json');
-                if (!response.ok) throw new Error('Failed to fetch data');
+                const response = await fetch(
+                    'https://solterbeck.github.io/AboutProcessMining/library_full_data.json'
+                );
+
+                if (!response.ok) {
+                    throw new Error(
+                        `Failed to fetch data: HTTP ${response.status}`
+                    );
+                }
+
                 const publications = await response.json();
 
+                if (!Array.isArray(publications)) {
+                    throw new Error(
+                        'The publication data does not contain an array.'
+                    );
+                }
+
                 const cutoffDate = new Date();
+                cutoffDate.setHours(0, 0, 0, 0);
                 cutoffDate.setDate(cutoffDate.getDate() - 30);
 
-                // Filter and sort publications
                 const newPublications = publications
-                    .filter(item => new Date(item.DateAdded) >= cutoffDate)
-                    .sort((a, b) => a.Title.localeCompare(b.Title));
+                    .filter(item => {
+                        if (!item.DateAdded) {
+                            return false;
+                        }
 
-                const accordion = document.getElementById('accordionNewPublications');
-                const noItemsMessage = document.getElementById('noItemsMessage');
+                        const dateAdded = new Date(item.DateAdded);
+
+                        return (
+                            !Number.isNaN(dateAdded.getTime()) &&
+                            dateAdded >= cutoffDate
+                        );
+                    })
+                    .sort((a, b) => {
+                        const titleA = String(a.Title || '');
+                        const titleB = String(b.Title || '');
+
+                        return titleA.localeCompare(
+                            titleB,
+                            'en',
+                            {
+                                sensitivity: 'base'
+                            }
+                        );
+                    });
 
                 if (newPublications.length === 0) {
+                    accordion.innerHTML = '';
                     noItemsMessage.classList.remove('d-none');
                     return;
                 }
 
+                noItemsMessage.classList.add('d-none');
+
                 let htmlContent = '';
+
                 newPublications.forEach((item, index) => {
+                    const safeUrl = getSafeUrl(item.Url);
+
+                    const sourceLink = safeUrl
+                        ? `
+                            <a
+                                href="${escapeHtml(safeUrl)}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Download or link to the source
+                            </a>
+                          `
+                        : 'N/A';
+
                     htmlContent += `
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading${index}">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
-                                    <div>
-                                        <strong>${item.Title || 'N/A'}</strong><br>
-                                        <small>${item.Author || 'N/A'}</small>
-                                    </div>
+
+                            <h3
+                                class="accordion-header"
+                                id="heading${index}"
+                            >
+                                <button
+                                    class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse${index}"
+                                    aria-expanded="false"
+                                    aria-controls="collapse${index}"
+                                >
+                                    <span>
+                                        <strong>
+                                            ${escapeHtml(
+                                                getOrFallback(item.Title)
+                                            )}
+                                        </strong>
+
+                                        <br>
+
+                                        <small>
+                                            ${escapeHtml(
+                                                getOrFallback(item.Author)
+                                            )}
+                                        </small>
+                                    </span>
                                 </button>
-                            </h2>
-                            <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" 
-                                 data-bs-parent="#accordionNewPublications">
+                            </h3>
+
+                            <div
+                                id="collapse${index}"
+                                class="accordion-collapse collapse"
+                                aria-labelledby="heading${index}"
+                                data-bs-parent="#accordionNewPublications"
+                            >
                                 <div class="accordion-body">
-                                    <p><strong>Author(s):</strong> ${getOrFallback(item.Author)}</p>
-                                    <p><strong>Editor(s):</strong> ${getOrFallback(item.Editor)}</p>
-                                    <p><strong>Item Type:</strong> ${getOrFallback(item.ItemType)}</p>
-                                    <p><strong>Publication Title:</strong> ${getOrFallback(item.PublicationTitle)}</p>
-                                    <p><strong>Publisher / Year / Pages / Language:</strong> 
-                                        ${getOrFallback(item.Publisher)} / ${getOrFallback(item.PublicationYear)} / ${getOrFallback(item.Pages)} / ${getOrFallback(item.Language)}
+
+                                    <p>
+                                        <strong>Author(s):</strong>
+                                        ${escapeHtml(
+                                            getOrFallback(item.Author)
+                                        )}
                                     </p>
-                                    <p><strong>Tags:</strong> ${getOrFallback(item.ManualTags)}</p>
-                                    <p><strong>Abstract:</strong> ${getOrFallback(item.AbstractNote)}</p>
-                                    <p><strong>Source:</strong> 
-                                        <a href="${getOrFallback(item.Url, '#')}" target="_blank">Download or link to the source</a>
+
+                                    <p>
+                                        <strong>Editor(s):</strong>
+                                        ${escapeHtml(
+                                            getOrFallback(item.Editor)
+                                        )}
                                     </p>
+
+                                    <p>
+                                        <strong>Item Type:</strong>
+                                        ${escapeHtml(
+                                            getOrFallback(item.ItemType)
+                                        )}
+                                    </p>
+
+                                    <p>
+                                        <strong>Publication Title:</strong>
+                                        ${escapeHtml(
+                                            getOrFallback(
+                                                item.PublicationTitle
+                                            )
+                                        )}
+                                    </p>
+
+                                    <p>
+                                        <strong>
+                                            Publisher / Year / Pages / Language:
+                                        </strong>
+
+                                        ${escapeHtml(
+                                            getOrFallback(item.Publisher)
+                                        )}
+                                        /
+                                        ${escapeHtml(
+                                            getOrFallback(
+                                                item.PublicationYear
+                                            )
+                                        )}
+                                        /
+                                        ${escapeHtml(
+                                            getOrFallback(item.Pages)
+                                        )}
+                                        /
+                                        ${escapeHtml(
+                                            getOrFallback(item.Language)
+                                        )}
+                                    </p>
+
+                                    <p>
+                                        <strong>Tags:</strong>
+                                        ${escapeHtml(
+                                            getOrFallback(item.ManualTags)
+                                        )}
+                                    </p>
+
+                                    <p>
+                                        <strong>Abstract:</strong>
+                                        ${escapeHtml(
+                                            getOrFallback(
+                                                item.AbstractNote
+                                            )
+                                        )}
+                                    </p>
+
+                                    <p>
+                                        <strong>Source:</strong>
+                                        ${sourceLink}
+                                    </p>
+
                                 </div>
                             </div>
+
                         </div>
                     `;
                 });
 
                 accordion.innerHTML = htmlContent;
+
             } catch (error) {
-                console.error('Error loading publications:', error);
+                console.error(
+                    'Error loading publications:',
+                    error
+                );
+
+                accordion.innerHTML = `
+                    <div class="alert alert-warning" role="alert">
+                        The publications could not be loaded at this time.
+                    </div>
+                `;
             }
         }
 
         loadNewPublications();
     </script>
+
 </body>
 </html>
