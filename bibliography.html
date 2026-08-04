@@ -57,10 +57,14 @@
             color: #000;
         }
         .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1rem;
             margin-bottom: 20px;
         }
         .filter-buttons button {
-            margin-right: 10px;
+            margin-right: 0;
+            white-space: nowrap;
         }
         .accordion-button:not(.collapsed) {
             color: #007bff;
@@ -81,6 +85,23 @@
             padding: 10px 0;
             text-align: center;
             border-top: 1px solid #ddd;
+        }
+        @media (max-width: 767.98px) {
+            .filter-buttons {
+                gap: 0.8rem;
+            }
+            .filter-buttons .btn {
+                flex: 1 1 calc(50% - 0.4rem);
+                min-width: 8rem;
+                padding: 0.7rem 0.65rem;
+                font-size: 1rem;
+                line-height: 1.2;
+            }
+        }
+        @media (max-width: 480px) {
+            .filter-buttons .btn {
+                min-width: 7.25rem;
+            }
         }
     </style>
 </head>
