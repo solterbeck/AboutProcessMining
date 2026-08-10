@@ -8755,6 +8755,23 @@
     "ConferenceName": null
   },
   {
+    "Title": "Process Atoms: Building Blocks for AI-Powered Business Process Management",
+    "Author": "Majid Rafiei, Adrian Rebmann, Peyman Badakhshan",
+    "Editor": null,
+    "ItemType": "journalArticle",
+    "PublicationTitle": null,
+    "Publisher": "Unpublished",
+    "PublicationYear": 2026.0,
+    "Pages": null,
+    "Language": "en",
+    "ManualTags": "Process Mining; Business Process Management; Artificial Intelligence; Declarative Process Models; Process Intelligence; Process Atoms",
+    "AbstractNote": "Business Process Management (BPM) is entering its most transformative phase: the knowledge-driven era, powered by artificial intelligence and intelligent automation. As AI agents join the workforce, traditional business processes require a new foundation, one that captures process knowledge in a clear, structured, and machine-readable form that both humans and AI systems can understand. Process Atoms provide this foundation: meaningful building blocks of enterprise behavior that serve as the structural layer enabling hybrid human-AI processes. They represent a fundamental shift from abstract process documentation toward precise, executable, and observable units of business logic. In this paper, we establish the foundational concepts of Process Atoms, introduce different Process Atom types, and position them in relation to existing process artifacts. (c) by authors",
+    "Url": "https://www.researchgate.net/doi/10.13140/RG.2.2.29610.38089/1",
+    "DateAdded": "2026-08-10T22:36:31Z",
+    "Medium": null,
+    "ConferenceName": null
+  },
+  {
     "Title": "Process Comparison Using Object-Centric Process Cubes",
     "Author": "Anahita Farhang Ghahfarokhi, Alessandro Berti, van der Aalst, Wil M. P.",
     "Editor": null,
@@ -11358,7 +11375,7 @@
   {
     "Title": "The Process Intelligence Guide: How to enable Enterprise AI at scale",
     "Author": null,
-    "Editor": null,
+    "Editor": "Celonis SE",
     "ItemType": "book",
     "PublicationTitle": null,
     "Publisher": null,
